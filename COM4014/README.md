@@ -9,9 +9,9 @@ COM4014/
 ├── NorthLight-Iceland/          ← Website files (submit as ZIP)
 │   ├── index.html
 │   ├── destinations.html
-│   ├── aurora.html
-│   ├── plan-your-trip.html
 │   ├── experiences.html
+│   ├── travel-guide.html
+│   ├── gallery.html
 │   ├── contact.html
 │   ├── thank-you.html
 │   └── css/styles.css

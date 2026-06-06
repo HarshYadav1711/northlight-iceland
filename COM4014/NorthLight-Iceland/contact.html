@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact NorthLight Iceland — send trip questions, feedback, or accessibility requests through our accessible form.">
+  <meta name="description" content="Contact NorthLight Iceland — send trip questions, website feedback, or accessibility requests.">
   <title>Contact | NorthLight Iceland</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="header-inner">
       <a href="index.html" class="logo">
         <span class="logo-mark">NorthLight Iceland</span>
-        <span class="logo-tagline">Travel with clarity</span>
+        <span class="logo-tagline">Arctic travel guides</span>
       </a>
 
       <input type="checkbox" id="nav-toggle" class="nav-checkbox">
@@ -28,9 +28,9 @@
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="destinations.html">Destinations</a></li>
-          <li><a href="aurora.html">Northern Lights</a></li>
-          <li><a href="plan-your-trip.html">Plan Your Trip</a></li>
           <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="travel-guide.html">Travel Guide</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ul>
       </nav>
@@ -47,125 +47,130 @@
           </ol>
         </nav>
         <h1>Contact</h1>
-        <p>Questions about routes, seasons, or accessibility on this site? Use the form below. Fields marked with an asterisk are required.</p>
+        <p>Trip questions, website feedback, or accessibility requests — all fields marked with an asterisk are required.</p>
       </div>
     </header>
 
     <section class="section" aria-labelledby="form-heading">
       <div class="container">
-        <div class="form-section">
-          <h2 id="form-heading">Send a message</h2>
-          <p class="prose">This form uses HTML5 validation for immediate feedback. Submissions are processed locally for this educational project — replace the <code>action</code> attribute with a live endpoint when deploying to production.</p>
+        <div class="form-layout">
+          <aside class="form-aside">
+            <h2 id="form-heading">Get in touch</h2>
+            <p>We read every message and reply with practical suggestions. This is an informational guide — we do not sell tours or packages.</p>
+            <p>For road conditions and weather, use official sources: <a href="https://www.road.is/" rel="noopener noreferrer">road.is</a> and <a href="https://en.vedur.is/" rel="noopener noreferrer">vedur.is</a>.</p>
+          </aside>
 
-          <form action="thank-you.html" method="get" novalidate>
-            <div class="form-group">
-              <label for="full-name">Full name <span class="required-mark" aria-hidden="true">*</span></label>
-              <input
-                type="text"
-                id="full-name"
-                name="full-name"
-                autocomplete="name"
-                required
-                minlength="2"
-                maxlength="80"
-                aria-required="true"
-                aria-describedby="name-hint"
-              >
-              <span id="name-hint" class="form-hint">Enter your first and last name.</span>
-            </div>
+          <div class="form-section">
+            <form action="thank-you.html" method="get">
+              <div class="form-group">
+                <label for="full-name">Full name <span class="required-mark" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="full-name"
+                  name="full-name"
+                  autocomplete="name"
+                  required
+                  minlength="2"
+                  maxlength="80"
+                  aria-required="true"
+                  aria-describedby="name-hint"
+                >
+                <span id="name-hint" class="form-hint">First and last name.</span>
+              </div>
 
-            <div class="form-group">
-              <label for="email">Email address <span class="required-mark" aria-hidden="true">*</span></label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                autocomplete="email"
-                required
-                aria-required="true"
-                aria-describedby="email-hint"
-              >
-              <span id="email-hint" class="form-hint">We use this only to reply to your enquiry.</span>
-            </div>
+              <div class="form-group">
+                <label for="email">Email address <span class="required-mark" aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                  aria-describedby="email-hint"
+                >
+                <span id="email-hint" class="form-hint">Used only to reply to your message.</span>
+              </div>
 
-            <fieldset>
-              <legend>Enquiry type <span class="required-mark" aria-hidden="true">*</span></legend>
-              <div class="radio-group">
-                <label>
-                  <input type="radio" name="enquiry-type" value="trip-planning" required>
-                  Trip planning question
-                </label>
-                <label>
-                  <input type="radio" name="enquiry-type" value="feedback">
-                  Website feedback
-                </label>
-                <label>
-                  <input type="radio" name="enquiry-type" value="accessibility">
-                  Accessibility request
-                </label>
-                <label>
-                  <input type="radio" name="enquiry-type" value="other">
-                  Other
+              <fieldset>
+                <legend>Enquiry type <span class="required-mark" aria-hidden="true">*</span></legend>
+                <div class="radio-group">
+                  <label>
+                    <input type="radio" name="enquiry-type" value="trip-planning" required>
+                    Trip planning
+                  </label>
+                  <label>
+                    <input type="radio" name="enquiry-type" value="feedback">
+                    Website feedback
+                  </label>
+                  <label>
+                    <input type="radio" name="enquiry-type" value="accessibility">
+                    Accessibility request
+                  </label>
+                  <label>
+                    <input type="radio" name="enquiry-type" value="other">
+                    Other
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="form-group">
+                <label for="travel-month">Preferred travel month</label>
+                <select id="travel-month" name="travel-month">
+                  <option value="">Select a month (optional)</option>
+                  <option value="jan">January</option>
+                  <option value="feb">February</option>
+                  <option value="mar">March</option>
+                  <option value="apr">April</option>
+                  <option value="may">May</option>
+                  <option value="jun">June</option>
+                  <option value="jul">July</option>
+                  <option value="aug">August</option>
+                  <option value="sep">September</option>
+                  <option value="oct">October</option>
+                  <option value="nov">November</option>
+                  <option value="dec">December</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message <span class="required-mark" aria-hidden="true">*</span></label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  minlength="20"
+                  maxlength="2000"
+                  aria-required="true"
+                  aria-describedby="message-hint"
+                ></textarea>
+                <span id="message-hint" class="form-hint">Minimum 20 characters. Include travel dates if relevant.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="consent" value="yes" required aria-required="true">
+                  <span>I agree that my details may be used to respond to this enquiry. <span class="required-mark" aria-hidden="true">*</span></span>
                 </label>
               </div>
-            </fieldset>
 
-            <div class="form-group">
-              <label for="travel-month">Preferred travel month (optional)</label>
-              <select id="travel-month" name="travel-month">
-                <option value="">Select a month</option>
-                <option value="jan">January</option>
-                <option value="feb">February</option>
-                <option value="mar">March</option>
-                <option value="apr">April</option>
-                <option value="may">May</option>
-                <option value="jun">June</option>
-                <option value="jul">July</option>
-                <option value="aug">August</option>
-                <option value="sep">September</option>
-                <option value="oct">October</option>
-                <option value="nov">November</option>
-                <option value="dec">December</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Message <span class="required-mark" aria-hidden="true">*</span></label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                minlength="20"
-                maxlength="2000"
-                aria-required="true"
-                aria-describedby="message-hint"
-              ></textarea>
-              <span id="message-hint" class="form-hint">Minimum 20 characters. Include your travel dates if relevant.</span>
-            </div>
-
-            <div class="form-group">
-              <label class="checkbox-label">
-                <input type="checkbox" name="consent" value="yes" required aria-required="true">
-                <span>I agree that my details may be used to respond to this enquiry. <span class="required-mark" aria-hidden="true">*</span></span>
-              </label>
-            </div>
-
-            <button type="submit" class="btn btn--primary">Send message</button>
-          </form>
+              <button type="submit" class="btn btn--primary">Send message</button>
+            </form>
+          </div>
         </div>
 
         <aside class="attribution" id="attributions">
           <h2>Image attributions</h2>
-          <p>All photographs sourced from <a href="https://unsplash.com/" rel="noopener noreferrer">Unsplash</a> under the <a href="https://unsplash.com/license" rel="noopener noreferrer">Unsplash License</a> (free for commercial and non-commercial use).</p>
+          <p>All photographs from <a href="https://unsplash.com/" rel="noopener noreferrer">Unsplash</a> under the <a href="https://unsplash.com/license" rel="noopener noreferrer">Unsplash License</a>.</p>
           <ul>
-            <li>Aurora over lake — Photo by <a href="https://unsplash.com/@vincentguth" rel="noopener noreferrer">Vincent Guth</a> on Unsplash</li>
-            <li>Iceland landscape — Photo by <a href="https://unsplash.com/@kymellis" rel="noopener noreferrer">Kym Ellis</a> on Unsplash</li>
-            <li>Reykjavík harbour — Photo by <a href="https://unsplash.com/@johansson" rel="noopener noreferrer">Jonas Johansson</a> on Unsplash</li>
-            <li>Waterfall (Seljalandsfoss) — Photo by <a href="https://unsplash.com/@kymellis" rel="noopener noreferrer">Kym Ellis</a> on Unsplash</li>
-            <li>Geothermal steam — Photo by <a href="https://unsplash.com/@erikoren" rel="noopener noreferrer">Erik Odiin</a> on Unsplash</li>
-            <li>Glacier and mountains — Photo by <a href="https://unsplash.com/@marcojodoin" rel="noopener noreferrer">Marc-Olivier Jodoin</a> on Unsplash</li>
-            <li>Aurora snow scene — Photo by <a href="https://unsplash.com/@markusspiske" rel="noopener noreferrer">Markus Spiske</a> on Unsplash</li>
-            <li>Whale tail — Photo by <a href="https://unsplash.com/@noaa" rel="noopener noreferrer">NOAA</a> on Unsplash</li>
+            <li>Aurora over lake — Vincent Guth</li>
+            <li>Iceland landscape / fjords — Kym Ellis</li>
+            <li>Reykjavík harbour — Jonas Johansson</li>
+            <li>Seljalandsfoss — Kym Ellis</li>
+            <li>Geothermal steam — Erik Odiin</li>
+            <li>Mountain reflection — Marc-Olivier Jodoin</li>
+            <li>Aurora snow scene — Markus Spiske</li>
+            <li>Whale tail — NOAA</li>
           </ul>
         </aside>
       </div>
@@ -177,25 +182,25 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <p class="logo-mark">NorthLight Iceland</p>
-          <p>Independent travel guides for Iceland. Built for clarity, accessibility, and informed planning.</p>
+          <p>Independent destination guides for Iceland. Practical, accessible, and free to use.</p>
         </div>
         <nav class="footer-nav" aria-label="Footer">
           <h2>Explore</h2>
           <ul>
             <li><a href="destinations.html">Destinations</a></li>
-            <li><a href="aurora.html">Northern Lights</a></li>
-            <li><a href="plan-your-trip.html">Plan Your Trip</a></li>
             <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="travel-guide.html">Travel Guide</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
           </ul>
         </nav>
         <div class="footer-contact">
           <h2>Contact</h2>
-          <p><a href="contact.html">Send a message</a></p>
+          <p><a href="contact.html">Send feedback</a></p>
           <p>Reykjavík, Iceland</p>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 NorthLight Iceland. Educational project for COM4014 Introduction to Web Authoring.</p>
+        <p>&copy; 2026 NorthLight Iceland. All guides published for educational and informational use.</p>
         <p><a href="contact.html#attributions">Image attributions</a></p>
       </div>
     </div>

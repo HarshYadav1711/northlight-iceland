@@ -47,28 +47,30 @@ To provide trustworthy, actionable travel information for Iceland that:
 ```
 NorthLight Iceland
 ├── Home (index.html)
-│   ├── Hero + value proposition
-│   ├── Featured regions
-│   └── Season overview CTA
+│   ├── Hero + brand statement
+│   ├── Featured destinations
+│   ├── Featured experiences
+│   └── Call to action
 ├── Destinations (destinations.html)
 │   ├── Reykjavík
 │   ├── Golden Circle
 │   ├── South Coast
-│   ├── Snæfellsnes
-│   └── North Iceland + comparison table
-├── Northern Lights (aurora.html)
-│   ├── Aurora science (brief)
-│   ├── Timing and conditions
-│   └── Clothing and expectations
-├── Plan Your Trip (plan-your-trip.html)
-│   ├── Seasons
-│   ├── Driving
-│   ├── Budget table
-│   └── Sample itineraries
+│   ├── Akureyri
+│   └── Westfjords + comparison table
 ├── Experiences (experiences.html)
-│   ├── Guided activities
-│   ├── Seasonal availability table
-│   └── Free/low-cost options
+│   ├── Northern Lights
+│   ├── Glacier hiking
+│   ├── Hot springs
+│   ├── Whale watching
+│   └── Ice caves + seasonal table
+├── Travel Guide (travel-guide.html)
+│   ├── Best time to visit
+│   ├── Transport
+│   ├── Budget
+│   ├── Safety
+│   └── Packing
+├── Gallery (gallery.html)
+│   └── Image grid with captions
 └── Contact (contact.html)
     ├── Accessible feedback form
     └── Image attributions
@@ -218,9 +220,9 @@ The website is deployed to GitHub Pages from the `COM4014/NorthLight-Iceland` di
 |------|---------|
 | `index.html` | Home page |
 | `destinations.html` | Regional guides |
-| `aurora.html` | Northern lights guide |
-| `plan-your-trip.html` | Planning and budgets |
-| `experiences.html` | Activities |
+| `experiences.html` | Activities and seasonal availability |
+| `travel-guide.html` | Planning, transport, budget, safety, packing |
+| `gallery.html` | Image gallery with captions |
 | `contact.html` | Form + attributions |
 | `thank-you.html` | Form confirmation |
 | `css/styles.css` | Shared styles |

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Iceland experiences — geothermal pools, glacier walks, whale watching, and cultural visits worth your time.">
+  <meta name="description" content="Iceland experiences — northern lights, glacier hiking, hot springs, whale watching, and ice caves with seasonal guidance.">
   <title>Experiences | NorthLight Iceland</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="header-inner">
       <a href="index.html" class="logo">
         <span class="logo-mark">NorthLight Iceland</span>
-        <span class="logo-tagline">Travel with clarity</span>
+        <span class="logo-tagline">Arctic travel guides</span>
       </a>
 
       <input type="checkbox" id="nav-toggle" class="nav-checkbox">
@@ -28,9 +28,9 @@
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="destinations.html">Destinations</a></li>
-          <li><a href="aurora.html">Northern Lights</a></li>
-          <li><a href="plan-your-trip.html">Plan Your Trip</a></li>
           <li><a href="experiences.html" aria-current="page">Experiences</a></li>
+          <li><a href="travel-guide.html">Travel Guide</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -47,140 +47,136 @@
           </ol>
         </nav>
         <h1>Experiences</h1>
-        <p>Activities that reward planning — what to book ahead, what works in each season, and what you can do independently.</p>
+        <p>Five activities travellers ask about most — when they run, what they cost in time and effort, and how to approach each one safely.</p>
       </div>
     </header>
 
-    <section class="section" aria-labelledby="exp-intro">
+    <section class="section" aria-labelledby="experiences-list">
       <div class="container">
-        <p class="lead" id="exp-intro">Iceland's landscape is the main attraction. These experiences add structure to your days without filling every hour with organised tours.</p>
+        <h2 id="experiences-list" class="visually-hidden">Experience listings</h2>
 
-        <div class="card-grid card-grid--3">
-          <article class="card">
-            <img
-              class="card-image"
-              src="https://images.unsplash.com/photo-1476610182048-b716bfb6815a?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-              alt="Visitors relaxing in a steaming geothermal pool surrounded by rocks"
-              width="800"
-              height="600"
-              loading="lazy"
-            >
-            <div class="card-body">
-              <h3>Geothermal pools</h3>
-              <p>From the Blue Lagoon to local swimming pools in every town — hot water is part of daily life. Shower before entering; it is required by pool etiquette.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img
-              class="card-image"
-              src="https://images.unsplash.com/photo-1521295121783-8a263d6dba82?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-              alt="Hikers walking on a glacier with crampons and guide ropes"
-              width="800"
-              height="600"
-              loading="lazy"
-            >
-            <div class="card-body">
-              <h3>Glacier walks</h3>
-              <p>Guided walks on Sólheimajökull or Vatnajökull outlets run year-round. Never walk on a glacier without equipment and a certified guide — crevasses are invisible from the surface.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img
-              class="card-image"
-              src="https://images.unsplash.com/photo-1559827292-581593893654?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-              alt="A humpback whale tail fluke above the ocean surface"
-              width="800"
-              height="600"
-              loading="lazy"
-            >
-            <div class="card-body">
-              <h3>Whale watching</h3>
-              <p>Húsavík in the north and Reykjavík harbour both run regular trips. Summer offers the widest species variety; dress warmly on boats even in August.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--accent" aria-labelledby="culture-heading">
-      <div class="container">
-        <div class="feature-row">
-          <div class="feature-text">
-            <span class="eyebrow">Culture</span>
-            <h2 id="culture-heading">Museums and heritage</h2>
+        <article class="experience-item" id="northern-lights">
+          <div>
+            <span class="experience-tag">Winter</span>
+          </div>
+          <div>
+            <h3>Northern Lights</h3>
             <div class="prose">
-              <p>Reykjavík's National Museum of Iceland and the Settlement Exhibition trace Viking history in compact, well-designed galleries. Perlan's Wonders of Iceland exhibition suits families and bad-weather days.</p>
-              <p>In the north, the Goðafoss waterfall carries historical weight — it is where lawspeaker Þorgeir converted Iceland to Christianity around the year 1000. Combine the visit with Lake Mývatn's volcanic formations.</p>
+              <p>Aurora appears when skies are dark and clear — roughly late August through mid-April, with peak darkness from October to March. Leave city light pollution for Þingvellir, the Reykjanes Peninsula, or rural guesthouses.</p>
+              <p>No forecast guarantees a display. Plan two or three evening attempts if aurora is a priority. Dress for standing still in cold wind for an hour or more.</p>
+              <p><a href="https://en.vedur.is/weather/forecasts/aurora/" rel="noopener noreferrer">Icelandic Met Office aurora forecast</a></p>
             </div>
           </div>
-          <img
-            class="feature-image"
-            src="https://images.unsplash.com/photo-1529963183539-53a91a228095?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
-            alt="Modern museum building with glass facade in Reykjavík"
-            width="900"
-            height="675"
-            loading="lazy"
-          >
-        </div>
+        </article>
+
+        <article class="experience-item" id="glacier-hiking">
+          <div>
+            <span class="experience-tag">Year-round</span>
+          </div>
+          <div>
+            <h3>Glacier hiking</h3>
+            <div class="prose">
+              <p>Guided walks on Sólheimajökull and Vatnajökull outlets run throughout the year. Crampons, harnesses, and ropes are provided — you need reasonable fitness and warm layers.</p>
+              <p>Never walk on a glacier without a certified guide. Crevasses are hidden beneath surface snow and ice.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="experience-item" id="hot-springs">
+          <div>
+            <span class="experience-tag">Year-round</span>
+          </div>
+          <div>
+            <h3>Hot springs &amp; geothermal pools</h3>
+            <div class="prose">
+              <p>The Blue Lagoon near Keflavík is the best-known option — book well ahead in summer. Every town has a public swimming pool (sundlaug) with hot tubs and steam baths for a fraction of the price.</p>
+              <p>Shower thoroughly before entering any pool. It is required etiquette and keeps the water clean for everyone.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="experience-item" id="whale-watching">
+          <div>
+            <span class="experience-tag">Summer peak</span>
+          </div>
+          <div>
+            <h3>Whale watching</h3>
+            <div class="prose">
+              <p>Húsavík in the north and Reykjavík harbour both run regular departures. Humpbacks, minke whales, and dolphins are common from May through September. Winter trips are limited and weather-dependent.</p>
+              <p>Allow a backup day in case seas are too rough. Motion sickness tablets help on Atlantic swells.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="experience-item" id="ice-caves">
+          <div>
+            <span class="experience-tag">Nov–Mar</span>
+          </div>
+          <div>
+            <h3>Ice caves</h3>
+            <div class="prose">
+              <p>Natural blue ice caves form at Vatnajökull glacier outlets during winter. Access is guided only — caves collapse and reform each year, so routes change season to season.</p>
+              <p>Combine with a South Coast overnight in Höfn or Vik. Day trips from Reykjavík are possible but involve long drives.</p>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="seasonal-exp-heading">
+    <section class="section section--muted" aria-labelledby="season-table-heading">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">By season</span>
-          <h2 id="seasonal-exp-heading">What works when</h2>
+          <span class="eyebrow">Seasonal guide</span>
+          <h2 id="season-table-heading">When each experience is available</h2>
         </div>
 
         <div class="table-wrap">
           <table>
-            <caption>Seasonal availability of popular experiences</caption>
+            <caption>Experience availability by season</caption>
             <thead>
               <tr>
                 <th scope="col">Experience</th>
+                <th scope="col">Spring</th>
                 <th scope="col">Summer</th>
+                <th scope="col">Autumn</th>
                 <th scope="col">Winter</th>
-                <th scope="col">Booking tip</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Geothermal pools</th>
-                <td>Available</td>
-                <td>Available</td>
-                <td>Blue Lagoon: book weeks ahead in peak season</td>
+                <th scope="row">Northern Lights</th>
+                <td>Limited (Mar–Apr)</td>
+                <td>Not visible</td>
+                <td>Good (Sep–Oct)</td>
+                <td>Peak (Nov–Feb)</td>
               </tr>
               <tr>
                 <th scope="row">Glacier hiking</th>
                 <td>Available</td>
                 <td>Available</td>
-                <td>Small group sizes — reserve early</td>
+                <td>Available</td>
+                <td>Available</td>
+              </tr>
+              <tr>
+                <th scope="row">Hot springs</th>
+                <td>Available</td>
+                <td>Available</td>
+                <td>Available</td>
+                <td>Available</td>
+              </tr>
+              <tr>
+                <th scope="row">Whale watching</th>
+                <td>Starting (Apr)</td>
+                <td>Peak</td>
+                <td>Good (Sep)</td>
+                <td>Limited</td>
               </tr>
               <tr>
                 <th scope="row">Ice caves</th>
                 <td>Not available</td>
-                <td>November–March</td>
-                <td>Guided only; conditions vary yearly</td>
-              </tr>
-              <tr>
-                <th scope="row">Whale watching</th>
-                <td>Peak season</td>
-                <td>Limited departures</td>
-                <td>Allow a backup day for weather</td>
-              </tr>
-              <tr>
-                <th scope="row">Puffin viewing</th>
-                <td>May–August</td>
                 <td>Not available</td>
-                <td>Boat tours from Reykjavík and north coast</td>
-              </tr>
-              <tr>
-                <th scope="row">Highland hiking</th>
-                <td>June–September</td>
-                <td>Roads closed</td>
-                <td>Check F-road opening dates</td>
+                <td>Not available</td>
+                <td>Nov–Mar only</td>
               </tr>
             </tbody>
           </table>
@@ -188,35 +184,11 @@
       </div>
     </section>
 
-    <section class="section section--accent" aria-labelledby="independent-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Self-guided</span>
-          <h2 id="independent-heading">Free and low-cost options</h2>
-        </div>
-
-        <div class="info-grid info-grid--3">
-          <article class="info-block">
-            <h3>Public swimming pools</h3>
-            <p>Every town has a heated pool — typically 900–1,200 ISK entry. Hot tubs and steam baths included. A genuine local experience.</p>
-          </article>
-          <article class="info-block">
-            <h3>Waterfall walks</h3>
-            <p>Seljalandsfoss, Skógafoss, and Gullfoss are accessible from parking areas. Paths can be icy in winter — microspikes help.</p>
-          </article>
-          <article class="info-block">
-            <h3>Coastal walks</h3>
-            <p>Arnarstapi to Hellnar on Snæfellsnes and the Reykjanes coastal paths need no guide. Respect cliff edges and warning signs.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-band" aria-labelledby="exp-cta-heading">
-      <div class="container">
-        <h2 id="exp-cta-heading">Want activity suggestions for your dates?</h2>
-        <p>We can recommend a balanced mix of guided and independent options.</p>
-        <a class="btn btn--primary" href="contact.html">Ask a question</a>
+    <section class="section section--dark">
+      <div class="container cta-band">
+        <h2>Need help fitting activities into your dates?</h2>
+        <p>The travel guide covers transport, budget, and packing for every season.</p>
+        <a class="btn btn--primary" href="travel-guide.html">Read travel guide</a>
       </div>
     </section>
   </main>
@@ -226,25 +198,25 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <p class="logo-mark">NorthLight Iceland</p>
-          <p>Independent travel guides for Iceland. Built for clarity, accessibility, and informed planning.</p>
+          <p>Independent destination guides for Iceland. Practical, accessible, and free to use.</p>
         </div>
         <nav class="footer-nav" aria-label="Footer">
           <h2>Explore</h2>
           <ul>
             <li><a href="destinations.html">Destinations</a></li>
-            <li><a href="aurora.html">Northern Lights</a></li>
-            <li><a href="plan-your-trip.html">Plan Your Trip</a></li>
             <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="travel-guide.html">Travel Guide</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
           </ul>
         </nav>
         <div class="footer-contact">
           <h2>Contact</h2>
-          <p><a href="contact.html">Send a message</a></p>
+          <p><a href="contact.html">Send feedback</a></p>
           <p>Reykjavík, Iceland</p>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 NorthLight Iceland. Educational project for COM4014 Introduction to Web Authoring.</p>
+        <p>&copy; 2026 NorthLight Iceland. All guides published for educational and informational use.</p>
         <p><a href="contact.html#attributions">Image attributions</a></p>
       </div>
     </div>
