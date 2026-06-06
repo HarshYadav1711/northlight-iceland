@@ -37,6 +37,12 @@
   text-decoration: none;
   color: var(--color-text);
   line-height: 1.2;
+  border-radius: var(--radius-sm);
+}
+
+.logo:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 .logo-mark {
@@ -81,6 +87,22 @@
   border-radius: var(--radius-sm);
   background: var(--color-surface);
   cursor: pointer;
+}
+
+.nav-toggle:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-checkbox:checked + .nav-toggle .nav-toggle-bar:nth-child(1),
+  .nav-checkbox:checked + .nav-toggle .nav-toggle-bar:nth-child(3) {
+    transform: none;
+  }
+
+  .nav-checkbox:checked + .nav-toggle .nav-toggle-bar:nth-child(2) {
+    opacity: 1;
+  }
 }
 
 .nav-toggle-bar {
@@ -139,6 +161,12 @@
   color: var(--color-text);
   font-weight: 500;
   font-size: 0.9375rem;
+  border-radius: var(--radius-sm);
+}
+
+.nav-list a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 .nav-list a[aria-current="page"] {
@@ -194,10 +222,6 @@
 
 .section--dark + .site-footer {
   margin-top: 0;
-}
-
-.section--dark .eyebrow {
-  color: var(--color-accent);
 }
 
 .section--dark .lead {

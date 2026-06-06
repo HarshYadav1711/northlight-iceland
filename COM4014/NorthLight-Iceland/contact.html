@@ -18,7 +18,7 @@
       </a>
 
       <input type="checkbox" id="nav-toggle" class="nav-checkbox">
-      <label for="nav-toggle" class="nav-toggle" aria-label="Open navigation menu">
+      <label for="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -47,7 +47,7 @@
           </ol>
         </nav>
         <h1>Contact</h1>
-        <p>Trip questions, website feedback, or accessibility requests — all fields marked with an asterisk are required.</p>
+        <p>Trip questions, website feedback, or accessibility requests — we read every message and reply with practical suggestions.</p>
       </div>
     </header>
 
@@ -55,86 +55,116 @@
       <div class="container">
         <div class="form-layout">
           <aside class="form-aside">
-            <h2 id="form-heading">Get in touch</h2>
-            <p>We read every message and reply with practical suggestions. This is an informational guide — we do not sell tours or packages.</p>
-            <p>For road conditions and weather, use official sources: <a href="https://www.road.is/" rel="noopener noreferrer">road.is</a> and <a href="https://en.vedur.is/" rel="noopener noreferrer">vedur.is</a>.</p>
+            <h2 id="form-heading">Send feedback</h2>
+            <p>We do not sell tours or packages. This form is for questions about our guides, corrections, or accessibility improvements.</p>
+            <p>For live road conditions and weather, use official sources: <a href="https://www.road.is/" rel="noopener noreferrer">road.is</a> and <a href="https://en.vedur.is/" rel="noopener noreferrer">vedur.is</a>.</p>
+            <p>For emergencies in Iceland, dial <strong>112</strong>.</p>
           </aside>
 
           <div class="form-section">
             <form action="thank-you.html" method="get">
-              <div class="form-group">
-                <label for="full-name">Full name <span class="required-mark" aria-hidden="true">*</span></label>
-                <input
-                  type="text"
-                  id="full-name"
-                  name="full-name"
-                  autocomplete="name"
-                  required
-                  minlength="2"
-                  maxlength="80"
-                  aria-required="true"
-                  aria-describedby="name-hint"
-                >
-                <span id="name-hint" class="form-hint">First and last name.</span>
-              </div>
+              <p class="form-intro" id="form-required-note">
+                Fields marked with <span class="required-mark" aria-hidden="true">*</span>
+                <span class="visually-hidden">asterisk</span> are required.
+              </p>
 
-              <div class="form-group">
-                <label for="email">Email address <span class="required-mark" aria-hidden="true">*</span></label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  autocomplete="email"
-                  required
-                  aria-required="true"
-                  aria-describedby="email-hint"
-                >
-                <span id="email-hint" class="form-hint">Used only to reply to your message.</span>
-              </div>
-
-              <fieldset>
-                <legend>Enquiry type <span class="required-mark" aria-hidden="true">*</span></legend>
-                <div class="radio-group">
-                  <label>
-                    <input type="radio" name="enquiry-type" value="trip-planning" required>
-                    Trip planning
+              <div class="form-row form-row--2">
+                <div class="form-group">
+                  <label for="full-name">
+                    Name
+                    <span class="required-mark" aria-hidden="true">*</span>
+                    <span class="visually-hidden">(required)</span>
                   </label>
-                  <label>
-                    <input type="radio" name="enquiry-type" value="feedback">
-                    Website feedback
-                  </label>
-                  <label>
-                    <input type="radio" name="enquiry-type" value="accessibility">
-                    Accessibility request
-                  </label>
-                  <label>
-                    <input type="radio" name="enquiry-type" value="other">
-                    Other
-                  </label>
+                  <input
+                    type="text"
+                    id="full-name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                    minlength="2"
+                    maxlength="80"
+                    aria-required="true"
+                    aria-describedby="name-hint form-required-note"
+                  >
+                  <span id="name-hint" class="form-hint">First and last name.</span>
                 </div>
-              </fieldset>
 
-              <div class="form-group">
-                <label for="travel-month">Preferred travel month</label>
-                <select id="travel-month" name="travel-month">
-                  <option value="">Select a month (optional)</option>
-                  <option value="jan">January</option>
-                  <option value="feb">February</option>
-                  <option value="mar">March</option>
-                  <option value="apr">April</option>
-                  <option value="may">May</option>
-                  <option value="jun">June</option>
-                  <option value="jul">July</option>
-                  <option value="aug">August</option>
-                  <option value="sep">September</option>
-                  <option value="oct">October</option>
-                  <option value="nov">November</option>
-                  <option value="dec">December</option>
-                </select>
+                <div class="form-group">
+                  <label for="email">
+                    Email
+                    <span class="required-mark" aria-hidden="true">*</span>
+                    <span class="visually-hidden">(required)</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    inputmode="email"
+                    required
+                    aria-required="true"
+                    aria-describedby="email-hint"
+                  >
+                  <span id="email-hint" class="form-hint">Used only to reply to your message.</span>
+                </div>
+              </div>
+
+              <div class="form-row form-row--2">
+                <div class="form-group">
+                  <label for="destination">
+                    Destination interest
+                    <span class="required-mark" aria-hidden="true">*</span>
+                    <span class="visually-hidden">(required)</span>
+                  </label>
+                  <select
+                    id="destination"
+                    name="destination"
+                    required
+                    aria-required="true"
+                    aria-describedby="destination-hint"
+                  >
+                    <option value="">Select a region</option>
+                    <option value="reykjavik">Reykjavík</option>
+                    <option value="golden-circle">Golden Circle</option>
+                    <option value="south-coast">South Coast</option>
+                    <option value="akureyri">Akureyri</option>
+                    <option value="westfjords">Westfjords</option>
+                    <option value="multiple">Multiple regions</option>
+                    <option value="unsure">Not sure yet</option>
+                  </select>
+                  <span id="destination-hint" class="form-hint">Which part of Iceland are you planning around?</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="travel-season">
+                    Preferred travel season
+                    <span class="required-mark" aria-hidden="true">*</span>
+                    <span class="visually-hidden">(required)</span>
+                  </label>
+                  <select
+                    id="travel-season"
+                    name="travel-season"
+                    required
+                    aria-required="true"
+                    aria-describedby="season-hint"
+                  >
+                    <option value="">Select a season</option>
+                    <option value="spring">Spring (April–May)</option>
+                    <option value="summer">Summer (June–August)</option>
+                    <option value="autumn">Autumn (September–October)</option>
+                    <option value="winter">Winter (November–March)</option>
+                    <option value="flexible">Flexible / not decided</option>
+                  </select>
+                  <span id="season-hint" class="form-hint">Helps us tailor advice to daylight and road access.</span>
+                </div>
               </div>
 
               <div class="form-group">
-                <label for="message">Message <span class="required-mark" aria-hidden="true">*</span></label>
+                <label for="message">
+                  Message
+                  <span class="required-mark" aria-hidden="true">*</span>
+                  <span class="visually-hidden">(required)</span>
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -143,15 +173,29 @@
                   maxlength="2000"
                   aria-required="true"
                   aria-describedby="message-hint"
+                  placeholder="Tell us about your trip plans, questions, or feedback…"
                 ></textarea>
-                <span id="message-hint" class="form-hint">Minimum 20 characters. Include travel dates if relevant.</span>
+                <span id="message-hint" class="form-hint">Minimum 20 characters. Include travel dates if you know them.</span>
               </div>
 
               <div class="form-group">
-                <label class="checkbox-label">
-                  <input type="checkbox" name="consent" value="yes" required aria-required="true">
-                  <span>I agree that my details may be used to respond to this enquiry. <span class="required-mark" aria-hidden="true">*</span></span>
+                <label class="checkbox-label" for="consent">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    value="yes"
+                    required
+                    aria-required="true"
+                    aria-describedby="consent-hint"
+                  >
+                  <span>
+                    I agree that my details may be used to respond to this enquiry.
+                    <span class="required-mark" aria-hidden="true">*</span>
+                    <span class="visually-hidden">(required)</span>
+                  </span>
                 </label>
+                <span id="consent-hint" class="form-hint">We do not share your information with third parties.</span>
               </div>
 
               <button type="submit" class="btn btn--primary">Send message</button>
@@ -199,7 +243,7 @@
         </nav>
         <div class="footer-contact">
           <h2>Contact</h2>
-          <p><a href="contact.html">Send feedback</a></p>
+          <p><a href="contact.html" aria-current="page">Send feedback</a></p>
           <p>Reykjavík, Iceland</p>
         </div>
       </div>

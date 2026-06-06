@@ -18,7 +18,7 @@
       </a>
 
       <input type="checkbox" id="nav-toggle" class="nav-checkbox">
-      <label for="nav-toggle" class="nav-toggle" aria-label="Open navigation menu">
+      <label for="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -39,18 +39,43 @@
 
   <main id="main-content">
     <section class="section">
-      <div class="container prose">
-        <h1>Thank you</h1>
-        <p>Your message has been received. For this demonstration, the form redirects here without server processing.</p>
-        <p><a class="btn btn--outline" href="index.html">Return to home</a></p>
+      <div class="container confirmation-panel" role="status">
+        <h1>Message received</h1>
+        <p>Thank you for getting in touch. For this demonstration, the form redirects here without server processing — no email has been sent.</p>
+        <p>In a live site, we would reply within a few working days with practical suggestions based on your destination and season.</p>
+        <div class="confirmation-actions">
+          <a class="btn btn--primary" href="index.html">Return to home</a>
+          <a class="btn btn--outline" href="destinations.html">Browse destinations</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="logo-mark">NorthLight Iceland</p>
+          <p>Independent destination guides for Iceland. Practical, accessible, and free to use.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="travel-guide.html">Travel Guide</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h2>Contact</h2>
+          <p><a href="contact.html">Send feedback</a></p>
+          <p>Reykjavík, Iceland</p>
+        </div>
+      </div>
       <div class="footer-bottom">
         <p>&copy; 2026 NorthLight Iceland. All guides published for educational and informational use.</p>
+        <p><a href="contact.html#attributions">Image attributions</a></p>
       </div>
     </div>
   </footer>
