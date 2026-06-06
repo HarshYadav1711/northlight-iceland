@@ -17,11 +17,11 @@
         <span class="logo-tagline">Arctic travel guides</span>
       </a>
 
-      <input type="checkbox" id="nav-toggle" class="nav-checkbox">
-      <label for="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
+      <input type="checkbox" id="nav-toggle" class="nav-checkbox" tabindex="-1" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle" tabindex="0" aria-label="Toggle navigation menu" aria-controls="main-nav">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
       </label>
 
       <nav id="main-nav" class="main-nav" aria-label="Primary">
@@ -54,7 +54,7 @@
     <section class="section" aria-labelledby="form-heading">
       <div class="container">
         <div class="form-layout">
-          <aside class="form-aside">
+          <aside class="form-aside" aria-labelledby="form-heading">
             <h2 id="form-heading">Send feedback</h2>
             <p>We do not sell tours or packages. This form is for questions about our guides, corrections, or accessibility improvements.</p>
             <p>For live road conditions and weather, use official sources: <a href="https://www.road.is/" rel="noopener noreferrer">road.is</a> and <a href="https://en.vedur.is/" rel="noopener noreferrer">vedur.is</a>.</p>
@@ -83,8 +83,7 @@
                     required
                     minlength="2"
                     maxlength="80"
-                    aria-required="true"
-                    aria-describedby="name-hint form-required-note"
+                    aria-describedby="name-hint"
                   >
                   <span id="name-hint" class="form-hint">First and last name.</span>
                 </div>
@@ -102,7 +101,6 @@
                     autocomplete="email"
                     inputmode="email"
                     required
-                    aria-required="true"
                     aria-describedby="email-hint"
                   >
                   <span id="email-hint" class="form-hint">Used only to reply to your message.</span>
@@ -120,10 +118,9 @@
                     id="destination"
                     name="destination"
                     required
-                    aria-required="true"
                     aria-describedby="destination-hint"
                   >
-                    <option value="">Select a region</option>
+                    <option value="" disabled selected hidden>Select a region</option>
                     <option value="reykjavik">Reykjavík</option>
                     <option value="golden-circle">Golden Circle</option>
                     <option value="south-coast">South Coast</option>
@@ -145,10 +142,9 @@
                     id="travel-season"
                     name="travel-season"
                     required
-                    aria-required="true"
                     aria-describedby="season-hint"
                   >
-                    <option value="">Select a season</option>
+                    <option value="" disabled selected hidden>Select a season</option>
                     <option value="spring">Spring (April–May)</option>
                     <option value="summer">Summer (June–August)</option>
                     <option value="autumn">Autumn (September–October)</option>
@@ -171,22 +167,19 @@
                   required
                   minlength="20"
                   maxlength="2000"
-                  aria-required="true"
                   aria-describedby="message-hint"
-                  placeholder="Tell us about your trip plans, questions, or feedback…"
                 ></textarea>
                 <span id="message-hint" class="form-hint">Minimum 20 characters. Include travel dates if you know them.</span>
               </div>
 
               <div class="form-group">
-                <label class="checkbox-label" for="consent">
+                <label class="checkbox-label">
                   <input
                     type="checkbox"
                     id="consent"
                     name="consent"
                     value="yes"
                     required
-                    aria-required="true"
                     aria-describedby="consent-hint"
                   >
                   <span>
@@ -203,8 +196,8 @@
           </div>
         </div>
 
-        <aside class="attribution" id="attributions">
-          <h2>Image attributions</h2>
+        <aside class="attribution" id="attributions" aria-labelledby="attributions-heading">
+          <h2 id="attributions-heading">Image attributions</h2>
           <p>All photographs from <a href="https://unsplash.com/" rel="noopener noreferrer">Unsplash</a> under the <a href="https://unsplash.com/license" rel="noopener noreferrer">Unsplash License</a>.</p>
           <ul>
             <li>Aurora over lake — Vincent Guth</li>

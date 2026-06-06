@@ -523,7 +523,14 @@ fieldset legend {
   border-radius: var(--radius-sm);
   background: var(--color-bg);
   color: var(--color-text);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    transition: none;
+  }
 }
 
 .form-group input:focus,

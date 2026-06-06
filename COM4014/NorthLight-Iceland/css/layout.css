@@ -70,7 +70,7 @@
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -283,7 +283,7 @@
 }
 
 .breadcrumb a {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
 }
 
@@ -361,6 +361,10 @@
   text-decoration: underline;
 }
 
+.site-footer .footer-nav a {
+  color: rgba(255, 255, 255, 0.88);
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: var(--space-md);
@@ -373,7 +377,7 @@
 }
 
 .site-footer a {
-  color: var(--color-secondary);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Grids */
