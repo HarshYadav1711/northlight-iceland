@@ -1,71 +1,159 @@
-# COM4014 — NorthLight Iceland
+# NorthLight Iceland
 
-Anonymous submission for **COM4014 Introduction to Web Authoring**.
+NorthLight Iceland is a destination-focused travel website designed to help visitors explore Iceland's most remarkable landscapes, experiences, and travel opportunities through a simple, intuitive, and accessible web experience.
 
-## Project structure
+The platform brings together practical travel information, destination highlights, activity recommendations, planning resources, and visitor feedback in a clean and responsive interface. The goal is to make trip planning straightforward while showcasing the unique character of Iceland's natural environment.
 
-```
-COM4014/
-├── docs/
-│   ├── website-specification.md
-│   ├── evaluation-report.md
-│   ├── references.md
-│   └── evidence/                ← Add validation screenshots here
-└── README.md
+## Overview
 
-Website files (repo root):
-├── css/
-│   ├── tokens.css               ← Design system variables
-│   ├── base.css                 ← Reset, typography, links
-│   ├── layout.css               ← Header, footer, sections, grids
-│   ├── components.css           ← Buttons, cards, forms, hero
-│   └── styles.css               ← Main import (link this in HTML)
-├── template.html                ← Reusable page shell
+Travel websites often overwhelm visitors with excessive information, cluttered navigation, and inconsistent user experiences. NorthLight Iceland was created with a different approach: present useful information clearly, prioritize usability, and make discovering destinations enjoyable.
+
+The website provides:
+
+* Destination guides covering major regions of Iceland
+* Information about popular activities and experiences
+* Practical travel planning resources
+* Image galleries showcasing key attractions
+* A visitor feedback and enquiry form
+* Responsive layouts for desktop, tablet, and mobile devices
+
+## Features
+
+### Destination Discovery
+
+Explore some of Iceland's most popular locations, including:
+
+* Reykjavík
+* The Golden Circle
+* South Coast
+* Akureyri
+* Westfjords
+
+Each destination includes concise information, key highlights, and travel inspiration.
+
+### Experiences
+
+Discover activities that make Iceland one of the world's most unique travel destinations:
+
+* Northern Lights viewing
+* Glacier hiking
+* Whale watching
+* Geothermal hot springs
+* Ice cave exploration
+
+### Travel Planning Resources
+
+Visitors can access practical information to help prepare for their journey, including:
+
+* Best times to visit
+* Transportation guidance
+* Budget considerations
+* Safety recommendations
+* Packing suggestions
+
+### Gallery
+
+A curated visual collection designed to showcase Iceland's landscapes, culture, and natural attractions.
+
+### Feedback Form
+
+A dedicated contact page allows visitors to submit feedback, travel enquiries, and trip interests through a structured form.
+
+## Design Principles
+
+NorthLight Iceland was developed around four core principles:
+
+### Clarity
+
+Content is organised into logical sections with straightforward navigation and consistent layouts.
+
+### Accessibility
+
+The website follows accessibility best practices by using:
+
+* Semantic HTML structure
+* Meaningful heading hierarchy
+* Alternative text for images
+* Accessible form labels
+* Keyboard-friendly navigation
+* Sufficient colour contrast
+
+### Responsiveness
+
+Layouts adapt across different screen sizes to provide a consistent experience on:
+
+* Desktop computers
+* Tablets
+* Mobile devices
+
+### Performance
+
+The website is intentionally lightweight and focuses on efficient delivery of content without unnecessary dependencies.
+
+## Technology Stack
+
+### Frontend
+
+* HTML5
+* CSS3
+
+### Layout Techniques
+
+* CSS Flexbox
+* CSS Grid
+* Responsive Media Queries
+
+No frontend frameworks, templates, or external UI libraries were used. The interface was built from the ground up to maintain full control over structure, styling, and performance.
+
+## Project Structure
+
+```text
+northlight-iceland/
+│
 ├── index.html
 ├── destinations.html
 ├── experiences.html
-├── travel-guide.html
+├── guide.html
 ├── gallery.html
 ├── contact.html
-└── thank-you.html
+│
+├── css/
+│   └── style.css
+│
+├── images/
+│
+└── README.md
 ```
 
-## Live site
+## User Experience Goals
 
-Deploy via GitHub Pages (see below). Live URL format:
+The website was designed to help visitors:
 
-`https://<username>.github.io/<repository-name>/`
+* Quickly understand what Iceland offers
+* Navigate between sections without confusion
+* Access information efficiently on any device
+* Submit travel enquiries easily
+* Enjoy a visually engaging browsing experience
 
-## Local preview
+## Future Enhancements
 
-Open `index.html` in a browser, or run a local server from the repository root:
+Potential future improvements include:
 
-```powershell
-python -m http.server 8080
-```
+* Interactive destination maps
+* Weather integration
+* Itinerary planning tools
+* Multi-language support
+* Search functionality
+* Booking integrations
 
-Then visit http://localhost:8080
+## Credits
 
-## GitHub Pages deployment
+Images used throughout the website are sourced from royalty-free providers or generated assets where permitted. Appropriate attribution is provided where required.
 
-1. Create a GitHub repository (e.g. `northlight-iceland`)
-2. Push this project to the `main` branch
-3. Go to **Settings → Pages → Build and deployment**
-4. Set source to **GitHub Actions**
-5. Push triggers `.github/workflows/pages.yml` automatically
-6. Copy the deployed URL into `docs/website-specification.md` and `docs/evaluation-report.md`
+Travel information presented on the website is intended for informational and educational purposes.
 
-## Pre-submission checklist
+## Author
 
-- [ ] Live URL added to specification and evaluation reports
-- [ ] W3C HTML validation screenshots saved to `docs/evidence/`
-- [ ] W3C CSS validation screenshot saved to `docs/evidence/`
-- [ ] WAVE reports saved to `docs/evidence/`
-- [ ] Submit `NorthLight-Iceland-website.zip`
-- [ ] Confirm no student name appears anywhere
+Developed and maintained by Harsh Yadav.
 
-## Validation tools (free)
-
-- HTML: https://validator.w3.org/nu/
-- CSS: https://jigsaw.w3.org/css-validator/
-- Accessibility: https://wave.webaim.org/
+For collaboration opportunities, feedback, or project discussions, feel free to get in touch.
