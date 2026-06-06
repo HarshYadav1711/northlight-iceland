@@ -192,6 +192,10 @@
   color: var(--color-surface);
 }
 
+.section--dark + .site-footer {
+  margin-top: 0;
+}
+
 .section--dark .eyebrow {
   color: var(--color-accent);
 }
