@@ -15,7 +15,7 @@ NorthLight Iceland is a static travel website that helps independent visitors pl
 
 The website comprises six HTML pages (five content pages plus one contact form page), one shared CSS stylesheet, and royalty-free photography with full attribution.
 
-**Live URL:** *[Insert after deployment — see Section 8]*
+**Live URL:** https://harshyadav1711.github.io/northlight-iceland/
 
 ---
 
@@ -208,9 +208,7 @@ Full references in AU Harvard format: see `docs/references.md`.
 
 The website is deployed to GitHub Pages from the `COM4014/NorthLight-Iceland` directory.
 
-**Live URL:** https://[username].github.io/northlight-iceland/
-
-*(Update with actual URL after first deployment.)*
+**Live URL:** https://harshyadav1711.github.io/northlight-iceland/
 
 ---
 

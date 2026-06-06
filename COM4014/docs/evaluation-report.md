@@ -19,7 +19,7 @@ This report documents testing of the NorthLight Iceland website across:
 
 **Pages tested:** All seven HTML pages (six primary + thank-you confirmation).
 
-**Live URL:** *[Insert deployed URL]*
+**Live URL:** https://harshyadav1711.github.io/northlight-iceland/
 
 ---
 
