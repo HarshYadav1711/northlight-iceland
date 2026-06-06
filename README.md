@@ -57,7 +57,7 @@ A curated visual collection designed to showcase Iceland's landscapes, culture, 
 
 ### Feedback Form
 
-A dedicated contact page allows visitors to submit feedback, travel enquiries, and trip interests through a structured form.
+A dedicated contact page allows visitors to submit feedback and travel enquiries through a structured form with fields for name, email, destination interest, preferred travel season, and message. Submissions redirect to a confirmation page (demonstration flow; no server processing).
 
 ## Design Principles
 
@@ -88,7 +88,7 @@ Layouts adapt across different screen sizes to provide a consistent experience o
 
 ### Performance
 
-The website is intentionally lightweight and focuses on efficient delivery of content without unnecessary dependencies.
+The site uses no JavaScript and no CSS frameworks—only HTML, modular CSS, and Google Fonts (Montserrat and Poppins) for typography.
 
 ## Technology Stack
 
@@ -101,29 +101,58 @@ The website is intentionally lightweight and focuses on efficient delivery of co
 
 * CSS Flexbox
 * CSS Grid
-* Responsive Media Queries
+* CSS custom properties (design tokens)
+* Responsive media queries
 
-No frontend frameworks, templates, or external UI libraries were used. The interface was built from the ground up to maintain full control over structure, styling, and performance.
+Styles are split into layered files (`tokens`, `base`, `layout`, `components`) imported through a single entry point (`css/styles.css`).
+
+No frontend frameworks or UI libraries were used. The interface was built from the ground up to maintain full control over structure, styling, and performance.
 
 ## Project Structure
 
 ```text
 northlight-iceland/
 │
-├── index.html
+├── index.html              # Homepage
 ├── destinations.html
 ├── experiences.html
-├── guide.html
+├── travel-guide.html
 ├── gallery.html
 ├── contact.html
+├── thank-you.html          # Form confirmation
+├── template.html           # Reusable page shell
 │
 ├── css/
-│   └── style.css
+│   ├── styles.css          # Main stylesheet (imports layers below)
+│   ├── tokens.css
+│   ├── base.css
+│   ├── layout.css
+│   └── components.css
 │
-├── images/
+├── images/                 # Local assets (optional; gallery uses Unsplash CDN)
 │
+├── .github/workflows/      # GitHub Pages deployment
+├── SUBMISSION-REVIEW.md    # Validation and accessibility review notes
 └── README.md
 ```
+
+Course specification and evaluation documents are in `COM4014/docs/`.
+
+## Live Site
+
+Deployed via GitHub Pages on push to `main`:
+
+**https://harshyadav1711.github.io/northlight-iceland/**
+
+## Local Preview
+
+Open `index.html` in a browser, or run a local server from the repository root:
+
+```powershell
+python -m http.server 8080
+```
+
+Then visit http://localhost:8080
 
 ## User Experience Goals
 
@@ -148,9 +177,9 @@ Potential future improvements include:
 
 ## Credits
 
-Images used throughout the website are sourced from royalty-free providers or generated assets where permitted. Appropriate attribution is provided where required.
+Photographs are sourced from [Unsplash](https://unsplash.com/) under the [Unsplash License](https://unsplash.com/license). Full photographer attributions are listed on the [Contact page](https://harshyadav1711.github.io/northlight-iceland/contact.html#attributions).
 
-Travel information presented on the website is intended for informational and educational purposes.
+Travel information on this site is for informational and educational purposes. NorthLight Iceland does not sell tours or travel packages.
 
 ## Author
 
