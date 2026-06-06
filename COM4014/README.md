@@ -6,28 +6,28 @@ Anonymous submission for **COM4014 Introduction to Web Authoring**.
 
 ```
 COM4014/
-├── NorthLight-Iceland/          ← Website files (submit as ZIP)
-│   ├── css/
-│   │   ├── tokens.css           ← Design system variables
-│   │   ├── base.css             ← Reset, typography, links
-│   │   ├── layout.css           ← Header, footer, sections, grids
-│   │   ├── components.css       ← Buttons, cards, forms, hero
-│   │   └── styles.css           ← Main import (link this in HTML)
-│   ├── images/                  ← Local image assets
-│   ├── template.html            ← Reusable page shell
-│   ├── index.html
-│   ├── destinations.html
-│   ├── experiences.html
-│   ├── travel-guide.html
-│   ├── gallery.html
-│   ├── contact.html
-│   └── thank-you.html
-├── NorthLight-Iceland-website.zip
-└── docs/
-    ├── website-specification.md
-    ├── evaluation-report.md
-    ├── references.md
-    └── evidence/                ← Add validation screenshots here
+├── docs/
+│   ├── website-specification.md
+│   ├── evaluation-report.md
+│   ├── references.md
+│   └── evidence/                ← Add validation screenshots here
+└── README.md
+
+Website files (repo root):
+├── css/
+│   ├── tokens.css               ← Design system variables
+│   ├── base.css                 ← Reset, typography, links
+│   ├── layout.css               ← Header, footer, sections, grids
+│   ├── components.css           ← Buttons, cards, forms, hero
+│   └── styles.css               ← Main import (link this in HTML)
+├── template.html                ← Reusable page shell
+├── index.html
+├── destinations.html
+├── experiences.html
+├── travel-guide.html
+├── gallery.html
+├── contact.html
+└── thank-you.html
 ```
 
 ## Live site
@@ -38,10 +38,9 @@ Deploy via GitHub Pages (see below). Live URL format:
 
 ## Local preview
 
-Open `COM4014/NorthLight-Iceland/index.html` in a browser, or run a local server:
+Open `index.html` in a browser, or run a local server from the repository root:
 
 ```powershell
-cd COM4014/NorthLight-Iceland
 python -m http.server 8080
 ```
 

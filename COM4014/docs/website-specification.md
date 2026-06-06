@@ -208,7 +208,7 @@ Full references in AU Harvard format: see `docs/references.md`.
 
 ## 8. Deployment
 
-The website is deployed to GitHub Pages from the `COM4014/NorthLight-Iceland` directory.
+The website is deployed to GitHub Pages from the repository root.
 
 **Live URL:** https://harshyadav1711.github.io/northlight-iceland/
 
