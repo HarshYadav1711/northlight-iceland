@@ -7,14 +7,21 @@ Anonymous submission for **COM4014 Introduction to Web Authoring**.
 ```
 COM4014/
 ├── NorthLight-Iceland/          ← Website files (submit as ZIP)
+│   ├── css/
+│   │   ├── tokens.css           ← Design system variables
+│   │   ├── base.css             ← Reset, typography, links
+│   │   ├── layout.css           ← Header, footer, sections, grids
+│   │   ├── components.css       ← Buttons, cards, forms, hero
+│   │   └── styles.css           ← Main import (link this in HTML)
+│   ├── images/                  ← Local image assets
+│   ├── template.html            ← Reusable page shell
 │   ├── index.html
 │   ├── destinations.html
 │   ├── experiences.html
 │   ├── travel-guide.html
 │   ├── gallery.html
 │   ├── contact.html
-│   ├── thank-you.html
-│   └── css/styles.css
+│   └── thank-you.html
 ├── NorthLight-Iceland-website.zip
 └── docs/
     ├── website-specification.md
