@@ -108,13 +108,17 @@ northlight-iceland/
 │   ├── layout.css          # Header, nav, footer, grids
 │   └── components.css      # Cards, forms, gallery, tables
 │
-├── images/                 # Empty — photos served from Unsplash CDN
+├── images/                 # Placeholder (.gitkeep); photos served from Unsplash CDN
 │
-├── docs/                   # Maintainer documentation
+├── docs/                   # Project documentation
+│   ├── website-specification.md
+│   ├── evaluation-report.md
 │   ├── production-review.md
 │   ├── image-attributions.md
 │   ├── assets-audit.md
-│   └── …
+│   └── references.md
+│
+├── SUBMISSION-REVIEW.md    # Validation checklist and review notes
 │
 ├── .github/workflows/
 │   └── pages.yml           # GitHub Pages deployment
