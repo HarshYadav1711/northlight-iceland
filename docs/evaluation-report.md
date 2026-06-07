@@ -208,7 +208,7 @@ The following issues were identified during development and pre-submission revie
 | Duplicate complementary landmarks | Named both `<aside>` elements with `aria-labelledby` on the contact page |
 | Consent label redundancy | Removed redundant `for` attribute where input is nested inside label |
 | Navigation keyboard access | Checkbox removed from tab order (`tabindex="-1"`, `aria-hidden="true"`); visible label receives focus with `aria-controls="main-nav"` |
-| Screen reader utility | Updated `.visually-hidden` to use `clip-path: inset(50%)` |
+| Screen reader utility | Updated `.visually-hidden` and `.nav-checkbox` to use `clip-path: inset(50%)`; removed deprecated `clip: rect()` |
 | Form validation clarity | Placeholder `<option>` elements use `disabled selected hidden`; removed redundant `aria-required` |
 | Breadcrumb contrast | Opacity increased from 75% to 88% on page hero breadcrumbs |
 | Footer link contrast | Links use high-contrast white (`rgba(255,255,255,0.88–0.9)`) |

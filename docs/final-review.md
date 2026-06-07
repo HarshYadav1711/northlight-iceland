@@ -168,7 +168,7 @@ No dedicated W3C CSS validator run in CI. Manual review confirms:
 - `@import` chain in `css/styles.css` resolves to five layer files.
 - Custom properties, flexbox, grid, and media queries use standard syntax.
 - No stray HTML attributes in CSS; no invalid `tabindex` in stylesheets.
-- Deprecated `clip: rect()` retained alongside `clip-path: inset(50%)` in `.visually-hidden` for older browser support.
+- `.visually-hidden` and `.nav-checkbox` use `clip-path: inset(50%)` only; deprecated `clip: rect()` removed (supported in Chrome 55+, Firefox 54+, Safari 9.1+, Edge 79+).
 
 ### Link and anchor audit
 
