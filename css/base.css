@@ -97,13 +97,15 @@ a:hover {
   outline: none;
 }
 
-.visually-hidden {
+.visually-hidden,
+.nav-checkbox {
   position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
   margin: -1px;
   overflow: hidden;
+  clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
@@ -134,14 +136,13 @@ a:hover {
   max-width: 42rem;
 }
 
-.prose p,
-.prose ul,
-.prose ol {
+.prose p {
   color: var(--color-text-muted);
 }
 
 .prose ul,
 .prose ol {
+  color: var(--color-text-muted);
   margin: 0 0 var(--space-sm);
   padding-left: 1.25rem;
 }

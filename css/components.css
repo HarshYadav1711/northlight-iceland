@@ -432,7 +432,6 @@ caption {
   padding: var(--space-sm) var(--space-md);
   font-family: var(--font-display);
   font-weight: 600;
-  caption-side: top;
 }
 
 th,
@@ -495,10 +494,6 @@ tbody tr:last-child td {
 }
 
 .form-group {
-  margin-bottom: var(--space-md);
-}
-
-.form-group:last-of-type {
   margin-bottom: var(--space-md);
 }
 
