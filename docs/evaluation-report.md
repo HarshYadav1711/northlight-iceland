@@ -1,25 +1,24 @@
 # NorthLight Iceland — Evaluation Report
 
-**Document version:** 2.0 (final submission)  
+**Document version:** 2.4 (final submission)  
 **Date:** June 2026  
+**Last updated:** 7 June 2026 — responsive evidence figures embedded in § A.6  
 **Live URL:** https://harshyadav1711.github.io/northlight-iceland/
 
 ---
 
 ## Status at submission
 
-| Category | Status |
-|----------|--------|
-| Development review (markup, accessibility intent, remediations) | **Completed** — see [Part A](#part-a--completed-findings) |
-| Automated HTML lint (`html-validate`) | **Completed** — 0 errors on all 8 HTML files |
-| Cross-browser manual testing | Pending manual verification |
-| Responsive layout manual testing (all breakpoints × browsers) | Pending manual verification |
-| W3C Markup Validation Service | Pending manual verification |
-| W3C CSS Validation Service | Pending manual verification |
-| WAVE accessibility evaluation | Pending manual verification |
-| Evidence screenshots | Pending manual verification |
-
-This report separates **completed findings** (verified during development and automated review) from **manual verification checklists** (standard final steps before or after submission). Items marked “Pending manual verification” are not failures — they await hands-on testing and optional supplementary tooling.
+| Category | Status | Evidence |
+|----------|--------|----------|
+| Development review (markup, accessibility intent, remediations) | **Completed** | [Part A](#part-a--completed-findings) |
+| Automated HTML lint (`html-validate`) | **Completed** — 0 errors on all 8 HTML files | CLI run; no screenshot |
+| W3C Nu HTML Validator | **Partial** — `index.html` and `contact.html` pass with 0 errors; six pages not yet uploaded | `html validation.png`, `html-validation-contact.png` |
+| W3C CSS Validator | **Completed** — 0 errors; 4 warnings | `css validation.png` |
+| WAVE accessibility evaluation | **Completed** — 3 pages; 0 errors and 0 contrast errors each | `wave-home.png`, `wave-destinations.png`, `wave-contact.png` |
+| Cross-browser manual testing | **Partial** — Chrome and Edge captured; Firefox not recorded | `Chrome evidence.png`, `Edge evidence.png` |
+| Responsive layout manual testing | **Completed** — primary breakpoints at 375px, 768px, and 1280px | `responsive-mobile-375.png`, `responsive-tablet-768.png`, `responsive-desktop-1280.png` |
+| Evidence folder | **14 screenshots** on file | See [Part C](#part-c--evidence-inventory) |
 
 ---
 
@@ -31,7 +30,7 @@ This report separates **completed findings** (verified during development and au
 
 **Shared stylesheet:** `css/styles.css` (imports `tokens.css`, `base.css`, `layout.css`, `components.css`)
 
-Cross-reference: detailed submission sign-off is recorded in `SUBMISSION-REVIEW.md`.
+Cross-reference: submission sign-off in `SUBMISSION-REVIEW.md`. Screenshot guide in `docs/evidence/README.md`.
 
 ---
 
@@ -43,23 +42,139 @@ Cross-reference: detailed submission sign-off is recorded in `SUBMISSION-REVIEW.
 |-------|------|-------|--------|
 | HTML structure and validity rules | [`html-validate`](https://html-validate.org/) CLI | All 8 `.html` files at repository root | **Pass — 0 errors** |
 
-Re-run locally from the repository root:
+Re-run locally:
 
 ```bash
 npx html-validate "*.html"
 ```
 
-### A.2 CSS structure review
+**Result:** No issues found.
+
+### A.2 W3C Nu HTML Validator (supplementary)
+
+**Tool:** https://validator.w3.org/nu/
+
+| Page | Errors | Warnings | Evidence | Result |
+|------|--------|----------|----------|--------|
+| `index.html` | 0 | 0 | `docs/evidence/html validation.png` | **Pass** — after `aria-controls` fix (see [B.1](#b1-issues-found-during-testing-remediated)) |
+| `contact.html` | 0 | 0 | `docs/evidence/html-validation-contact.png` | **Pass** — no issues found |
+| `destinations.html` | — | — | — | Not yet validated in Nu Validator |
+| `experiences.html` | — | — | — | Not yet validated in Nu Validator |
+| `travel-guide.html` | — | — | — | Not yet validated in Nu Validator |
+| `gallery.html` | — | — | — | Not yet validated in Nu Validator |
+| `thank-you.html` | — | — | — | Not yet validated in Nu Validator |
+| `template.html` | — | — | — | Not yet validated in Nu Validator |
+
+### A.3 W3C CSS Validator
+
+**Tool:** https://jigsaw.w3.org/css-validator/  
+**File tested:** `css/styles.css`  
+**Evidence:** `docs/evidence/css validation.png`
+
+| Errors | Warnings | Result |
+|--------|----------|--------|
+| 0 | 4 | **Pass** — no CSS errors; four warnings reported by the validator (review full output in screenshot; warnings are non-blocking) |
+
+### A.4 WAVE accessibility evaluation
+
+**Tool:** https://wave.webaim.org/  
+**Target:** Live site URLs
+
+| Page | Errors | Contrast errors | Alerts | AIM score | Evidence | Result |
+|------|--------|-----------------|--------|-----------|----------|--------|
+| `index.html` | 0 | 0 | 2 | 10/10 | `wave-home.png` | **Pass** — no errors; alerts noted in [B.2](#b2-issues-noted--not-remediated-accepted) |
+| `destinations.html` | 0 | 0 | 2 | 10/10 | `wave-destinations.png` | **Pass** — no errors; same alert types as homepage |
+| `contact.html` | 0 | 0 | 2 | 10/10 | `wave-contact.png` | **Pass** — no errors; same alert types as homepage |
+
+**WAVE alert detail (all three pages — not remediated; manual review):**
+
+| Alert | Count | Likely cause | Action |
+|-------|-------|--------------|--------|
+| Possible heading | 1 | Text styled as heading without `<h1>`–`<h6>` (often logo tagline or similar) | Review manually; change only if a true heading is intended |
+| Redundant link | 1 | Logo and adjacent “Home” nav link share `index.html` | Common pattern; acceptable for submission |
+
+**Result:** No WAVE errors or contrast errors on tested pages.
+
+### A.5 Cross-browser manual testing
+
+| Browser | Viewport | Page | Evidence | Result |
+|---------|----------|------|----------|--------|
+| Google Chrome | Desktop | `index.html` | `Chrome evidence.png` | **Pass** — layout, navigation, and typography render; Unsplash hero image requires network (broken `alt` placeholder visible under `file://` without CDN) |
+| Microsoft Edge | Desktop | `index.html` | `Edge evidence.png` | **Pass** — layout and navigation consistent with Chrome |
+| Mozilla Firefox | — | — | — | **Not recorded** — no screenshot on file |
+
+### A.6 Responsive layout manual testing
+
+**Method:** Chrome / Edge DevTools responsive mode. Primary evidence uses the canonical filenames in `docs/evidence/README.md`.
+
+#### Primary breakpoint evidence
+
+| Breakpoint | Viewport | Page tested | Evidence file | Observed behaviour | Result |
+|------------|----------|-------------|---------------|-------------------|--------|
+| Mobile | 375 × 645px | `index.html` | `responsive-mobile-375.png` | Single column; hero call-to-action buttons stack; “Our approach” section readable below fold (header and hamburger above captured viewport) | **Pass** |
+| Tablet | 768 × 645px | `index.html` | `responsive-tablet-768.png` | Hamburger menu still shown (horizontal nav activates at 900px); full hero heading and body copy readable; CTA buttons side by side | **Pass** |
+| Desktop | 1280 × 921px | `index.html` | `responsive-desktop-1280.png` | Full horizontal primary navigation; mobile toggle hidden (`display: none` at ≥900px); hero and “Our approach” sections render as intended | **Pass** |
+
+#### Evidence figures — primary breakpoints
+
+Screenshots captured in Chrome DevTools responsive mode against local `index.html` (viewport dimensions shown in each image).
+
+**Figure 1 — Mobile (375 × 645px)**
+
+![Homepage at 375px: single-column layout, stacked call-to-action buttons, and content sections readable below the hero](evidence/responsive-mobile-375.png)
+
+*Pass — narrow single-column layout; hero call-to-action buttons stack vertically; “Our approach” section readable without horizontal scroll (site header and hamburger menu sit above this viewport crop).*
+
+**Figure 2 — Tablet (768 × 645px)**
+
+![Homepage at 768px: hamburger navigation, full hero heading, and side-by-side call-to-action buttons](evidence/responsive-tablet-768.png)
+
+*Pass — hamburger menu still shown (horizontal nav activates at 900px); hero heading and body copy fully readable; call-to-action buttons display inline.*
+
+**Figure 3 — Desktop (1280 × 921px)**
+
+![Homepage at 1280px: full horizontal primary navigation and multi-section layout below the hero](evidence/responsive-desktop-1280.png)
+
+*Pass — horizontal navigation bar replaces the mobile toggle; hero and “Our approach” sections render as intended; DevTools confirms `.nav-toggle { display: none }` at ≥900px.*
+
+#### Responsive test matrix (homepage — verified from primary evidence)
+
+| Test | Mobile (375px) | Tablet (768px) | Desktop (1280px) |
+|------|----------------|----------------|------------------|
+| Navigation usable | Pass — hamburger visible | Pass — hamburger visible | Pass — horizontal nav bar |
+| Hero / page hero readable | Pass | Pass | Pass |
+| Call-to-action buttons usable | Pass — stacked | Pass — inline pair | Pass — inline pair |
+| Content sections below hero readable | Pass — “Our approach” visible | Pass — hero fills viewport | Pass — hero + “Our approach” visible |
+| Card grid layout | Not in viewport | Not in viewport | Not in viewport |
+| Tables scroll horizontally | N/A on homepage | N/A on homepage | N/A on homepage |
+| Contact form usable | N/A on homepage | N/A on homepage | N/A on homepage |
+| Footer readable | Not in viewport | Not in viewport | Not in viewport |
+
+**Result:** No responsive layout issues found on `index.html` at the three primary breakpoints. Card grids, tables, and the contact form were not exercised in these homepage captures.
+
+#### Supplementary mobile device captures
+
+Additional narrow-width checks on `index.html` (same page; non-canonical filenames):
+
+| Device | Approx. width | Evidence file | Result |
+|--------|---------------|---------------|--------|
+| iPhone SE | 375px | `iPhone SE Evidence.png` | **Pass** — consistent with `responsive-mobile-375.png` |
+| Samsung Galaxy S8+ | 360px | `Samsung Galaxy S8+ Evidence.png` | **Pass** |
+| Galaxy Z Fold 5 | 344px | `Galaxy Z Fold 5 Evidence.png` | **Pass** |
+
+**Not yet captured:** responsive screenshots of inner pages (`destinations.html` at 768px, `travel-guide.html` at 1280px) for card grids, tables, and form layout.
+
+### A.7 CSS structure review
 
 | Check | Result |
 |-------|--------|
-| Layered imports via `css/styles.css` | **Pass** — `tokens`, `base`, `layout`, `components` resolve in order |
-| Invalid properties in stylesheets | **Pass** — no stray HTML attributes or invalid declarations identified during review |
-| Responsive breakpoints in use | **Pass** — 600px, 768px, and 900px media queries drive grids, navigation, forms, and tables |
+| Layered imports via `css/styles.css` | **Pass** |
+| Invalid properties in stylesheets | **Pass** |
+| Responsive breakpoints in use | **Pass** — 600px, 768px, 900px |
 
-### A.3 Implemented accessibility features
+**Result:** No issues found.
 
-The following features are present in the current codebase (design intent — not a substitute for WAVE or assistive-technology testing):
+### A.8 Implemented accessibility features
 
 | Feature | Implementation |
 |---------|----------------|
@@ -72,203 +187,111 @@ The following features are present in the current codebase (design intent — no
 | Focus indicators | Visible `:focus-visible` outline on interactive elements |
 | Tables | `<caption>` and `th scope` on all data tables |
 | Motion | `prefers-reduced-motion` respected for navigation animation and form transitions |
-| Navigation toggle | Hidden checkbox (`tabindex="-1"`, `aria-hidden="true"`); visible label (`tabindex="0"`, `aria-controls="main-nav"`) |
+| Navigation toggle | Hidden checkbox (`tabindex="-1"`, `aria-hidden="true"`, `aria-controls="main-nav"`); visible label (`tabindex="0"`) |
 | Screen reader utility | `.visually-hidden` and `.nav-checkbox` use `clip-path: inset(50%)` |
 
-### A.4 Development review — issues identified and resolved
+---
 
-Issues below were found during development and pre-submission review (`SUBMISSION-REVIEW.md`). All except the known `aria-expanded` limitation were remediated in the repository.
+## Part B — Issues found and fixes
 
-| Issue | Area | Severity | Resolution |
-|-------|------|----------|------------|
-| Duplicate complementary landmarks without unique labels | `contact.html` | Medium | **Resolved** — both `<aside>` elements named with `aria-labelledby` |
-| Redundant `for` on nested consent checkbox label | `contact.html` | Low | **Resolved** — redundant `for` removed |
-| Hidden checkbox in tab order | Navigation (all pages) | Medium | **Resolved** — `tabindex="-1"` and `aria-hidden="true"` on checkbox; label receives focus |
-| Deprecated `clip: rect()` in visually-hidden utility | `css/base.css` | Low | **Resolved** — `clip-path: inset(50%)` only |
-| Redundant `aria-required` alongside native `required` | `contact.html` | Low | **Resolved** — redundant attribute removed |
-| Low-contrast breadcrumb links on page hero | Inner pages | Medium | **Resolved** — opacity increased to 88% |
-| Low-contrast footer links | All pages | Medium | **Resolved** — high-contrast white link colours |
-| Wide tables on small screens | Table pages | Medium | **Resolved** — `.table-wrap` with horizontal scroll |
-| Mobile menu `aria-expanded` not updated without JavaScript | Navigation (all pages) | Low | **Known limitation** — acceptable without JavaScript |
+### B.1 Issues found during testing (remediated)
 
-### A.5 Known limitations (accepted for submission)
+| # | Issue | Found by | Area | Fix applied |
+|---|-------|----------|------|-------------|
+| 1 | `aria-controls` on `<label for="nav-toggle">` — invalid per HTML | W3C Nu Validator (`index.html`) | Navigation (all 8 pages) | Moved `aria-controls="main-nav"` to checkbox input; label keeps `tabindex="0"` |
+| 2 | Duplicate complementary landmarks without unique labels | Development / `html-validate` | `contact.html` | Both `<aside>` elements named with `aria-labelledby` |
+| 3 | Redundant `for` on nested consent checkbox label | Development review | `contact.html` | Redundant `for` removed |
+| 4 | Hidden checkbox in tab order | Development review | Navigation (all pages) | `tabindex="-1"` and `aria-hidden="true"` on checkbox; label receives focus |
+| 5 | Deprecated `clip: rect()` in visually-hidden utility | Development review | `css/base.css` | Removed; `clip-path: inset(50%)` only |
+| 6 | Redundant `aria-required` alongside native `required` | Development review | `contact.html` | Redundant attribute removed |
+| 7 | Low-contrast breadcrumb links on page hero | Development review | Inner pages | Opacity increased to 88% |
+| 8 | Low-contrast footer links | Development review | All pages | High-contrast white link colours |
+| 9 | Wide tables on small screens | Development review | Table pages | `.table-wrap` with horizontal scroll |
+
+**Evidence for issue 1:** `html validation.png` shows **0 errors** on `index.html` after the fix. `html-validation-contact.png` confirms **0 errors** on `contact.html` (same navigation pattern).
+
+### B.2 Issues noted — not remediated (accepted)
+
+| Issue | Found by | Detail | Status |
+|-------|----------|--------|--------|
+| Mobile menu `aria-expanded` not updated | Design constraint | CSS-only toggle; no JavaScript | **Known limitation** |
+| WAVE “Possible heading” alert | WAVE (3 pages) | 1 alert per page; likely non-semantic styled text | **Accepted** — manual review; no error |
+| WAVE “Redundant link” alert | WAVE (3 pages) | Logo + “Home” nav both link to `index.html` | **Accepted** — common header pattern |
+| W3C CSS 4 warnings | W3C CSS Validator | Non-blocking warnings on `styles.css` | **Accepted** — 0 errors; see `css validation.png` |
+| CDN images offline under `file://` | Chrome evidence | Hero Unsplash image shows broken icon without network | **Expected** — site designed for HTTP + CDN |
+| Demo form `method="get"` | By design | Field values appear in URL on submit | **Known limitation** |
+
+### B.3 Checks with no issues found
+
+| Check | Tool / method | Scope | Result |
+|-------|---------------|-------|--------|
+| HTML lint | `html-validate` CLI | All 8 HTML files | 0 errors |
+| W3C Nu HTML validation | Nu Validator | `index.html` | 0 errors, 0 warnings |
+| W3C Nu HTML validation | Nu Validator | `contact.html` | 0 errors, 0 warnings |
+| W3C CSS validation | CSS Validator | `css/styles.css` | 0 errors |
+| WAVE errors | WAVE | `index.html`, `destinations.html`, `contact.html` | 0 errors, 0 contrast errors on each |
+| Chrome desktop layout | Manual | `index.html` | Renders correctly |
+| Edge desktop layout | Manual | `index.html` | Renders correctly |
+| Mobile responsive layout | DevTools — `responsive-mobile-375.png` | `index.html` at 375px | Pass — single column, hamburger menu |
+| Tablet responsive layout | DevTools — `responsive-tablet-768.png` | `index.html` at 768px | Pass — hamburger menu; hero readable |
+| Desktop responsive layout | DevTools — `responsive-desktop-1280.png` | `index.html` at 1280px | Pass — horizontal navigation |
+| Narrow mobile layouts | DevTools — supplementary captures | `index.html` at 344–375px | Pass — three additional device presets |
+
+### B.4 Checks not yet completed
+
+| Check | Status |
+|-------|--------|
+| W3C Nu Validator on six remaining HTML pages | Not uploaded / not screenshot |
+| Mozilla Firefox manual test | No evidence on file |
+| Contact form validation screenshot in Edge | Not captured (`Edge evidence.png` shows homepage only) |
+| Inner-page responsive spot-checks (`destinations.html` at 768px, `travel-guide.html` at 1280px) | Not captured — primary breakpoint evidence uses `index.html` |
+
+---
+
+## Part C — Evidence inventory
+
+Files present in `docs/evidence/` as of 7 June 2026:
+
+| File | Test type | Documents |
+|------|-----------|-----------|
+| `html validation.png` | W3C Nu Validator — `index.html` | 0 errors, 0 warnings |
+| `html-validation-contact.png` | W3C Nu Validator — `contact.html` | 0 errors, 0 warnings |
+| `css validation.png` | W3C CSS Validator — `styles.css` | 0 errors, 4 warnings |
+| `wave-home.png` | WAVE — homepage | 0 errors, 0 contrast errors, 2 alerts |
+| `wave-destinations.png` | WAVE — destinations page | 0 errors, 0 contrast errors, 2 alerts |
+| `wave-contact.png` | WAVE — contact page | 0 errors, 0 contrast errors, 2 alerts |
+| `responsive-mobile-375.png` | Responsive — 375×645 | `index.html` mobile; hamburger, stacked CTAs |
+| `responsive-tablet-768.png` | Responsive — 768×645 | `index.html` tablet; hamburger, full hero |
+| `responsive-desktop-1280.png` | Responsive — 1280×921 | `index.html` desktop; horizontal nav |
+| `Chrome evidence.png` | Cross-browser — Chrome desktop | Homepage layout |
+| `Edge evidence.png` | Cross-browser — Edge desktop | Homepage layout |
+| `iPhone SE Evidence.png` | Responsive — supplementary 375px | Homepage mobile |
+| `Samsung Galaxy S8+ Evidence.png` | Responsive — supplementary 360px | Homepage mobile |
+| `Galaxy Z Fold 5 Evidence.png` | Responsive — supplementary 344px | Homepage mobile |
+| `README.md` | Capture guide | Filename reference for assessors |
+
+**Note:** Primary responsive evidence (`responsive-*.png`) captures `index.html` at all three breakpoints. The evidence guide originally suggested `destinations.html` (tablet) and `travel-guide.html` (desktop) for card-grid and multi-column checks; those inner-page captures remain optional.
+
+**Still missing (optional):** Firefox screenshot, Edge contact-form validation screenshot, inner-page responsive shots, Nu Validator screenshots for remaining HTML pages.
+
+---
+
+## Part D — Known limitations (accepted for submission)
 
 - Contact form uses `method="get"` and redirects to `thank-you.html`; no server-side processing.
-- Photographs load from the Unsplash CDN; offline viewing shows `alt` text until images load.
+- Photographs load from the Unsplash CDN; offline or `file://` viewing may show `alt` text until images load.
 - CSS-only mobile menu does not update `aria-expanded` when toggled.
-- Cross-browser layout was reviewed in a Chromium-based browser during development; Firefox and Edge hands-on runs are listed under manual verification below.
-
----
-
-## Part B — Manual verification checklists
-
-Complete these checks in a browser or online tool. Record results and optional screenshots in `docs/evidence/` when finished. Until then, each section remains **Pending manual verification**.
-
-### B.1 Cross-browser testing
-
-**Method:** Manual testing at desktop viewport (1280px) and mobile viewport (375px). Verify navigation, link targets, form interaction, image loading, and typographic rendering.
-
-**Browsers to test:**
-
-| Browser | Version tested | Layout & navigation | Form interaction | Fonts load | Status |
-|---------|----------------|---------------------|------------------|------------|--------|
-| Google Chrome | — | [ ] | [ ] | [ ] | Pending manual verification |
-| Mozilla Firefox | — | [ ] | [ ] | [ ] | Pending manual verification |
-| Microsoft Edge | — | [ ] | [ ] | [ ] | Pending manual verification |
-
-**Checklist:**
-
-- [ ] Primary navigation links reach the correct pages
-- [ ] Mobile menu toggle opens and closes at 375px width
-- [ ] Contact form shows browser validation for invalid input
-- [ ] External links include `rel="noopener noreferrer"` (verify intended same-tab or new-tab behaviour)
-- [ ] Google Fonts (Montserrat, Poppins) render when network is available
-
-**Optional evidence (save to `docs/evidence/` when captured):**
-
-| File | Description |
-|------|-------------|
-| `browser-chrome-home.png` | Homepage layout in Chrome at 1280px |
-| `browser-firefox-nav.png` | Navigation and mobile menu in Firefox |
-| `browser-edge-form.png` | Contact form validation in Edge |
-
----
-
-### B.2 Responsive layout testing
-
-**Method:** Browser DevTools device emulation or window resize at three widths.
-
-| Breakpoint | Width | Example device |
-|------------|-------|----------------|
-| Mobile | 375px | iPhone SE |
-| Tablet | 768px | iPad portrait |
-| Desktop | 1280px | Standard laptop |
-
-**Checklist — mark each cell when verified:**
-
-| Test | Mobile (375px) | Tablet (768px) | Desktop (1280px) |
-|------|----------------|----------------|------------------|
-| Navigation usable | [ ] | [ ] | [ ] |
-| Hero / page hero readable | [ ] | [ ] | [ ] |
-| Card grids layout correctly | [ ] | [ ] | [ ] |
-| Tables scroll horizontally inside `.table-wrap` | [ ] | [ ] | [ ] |
-| Contact form usable | [ ] | [ ] | [ ] |
-| Footer readable | [ ] | [ ] | [ ] |
-
-**Section status:** Pending manual verification
-
-**Optional evidence (save to `docs/evidence/` when captured):**
-
-| File | Description |
-|------|-------------|
-| `responsive-mobile-375.png` | Homepage at 375px width |
-| `responsive-tablet-768.png` | Destinations page at 768px width |
-| `responsive-desktop-1280.png` | Travel Guide page at 1280px width |
-
----
-
-### B.3 W3C HTML validation (supplementary)
-
-**Note:** Automated `html-validate` already reports 0 errors (see [A.1](#a1-automated-markup-review)). The W3C Nu Validator is an optional supplementary check.
-
-**Tool:** https://validator.w3.org/nu/
-
-**Procedure:**
-
-1. Upload each HTML file or validate by direct input
-2. Record errors and warnings per page
-3. Remediate any unintended issues and re-validate
-
-**Checklist:**
-
-| Page | Errors | Warnings | Verified | Status |
-|------|--------|----------|----------|--------|
-| `index.html` | — | — | [ ] | Pending manual verification |
-| `destinations.html` | — | — | [ ] | Pending manual verification |
-| `experiences.html` | — | — | [ ] | Pending manual verification |
-| `travel-guide.html` | — | — | [ ] | Pending manual verification |
-| `gallery.html` | — | — | [ ] | Pending manual verification |
-| `contact.html` | — | — | [ ] | Pending manual verification |
-| `thank-you.html` | — | — | [ ] | Pending manual verification |
-| `template.html` | — | — | [ ] | Pending manual verification |
-
-**Optional evidence (save to `docs/evidence/` when captured):**
-
-| File | Description |
-|------|-------------|
-| `html-validation-home.png` | W3C Nu Validator result for `index.html` |
-| `html-validation-contact.png` | W3C Nu Validator result for `contact.html` |
-
----
-
-### B.4 W3C CSS validation
-
-**Tool:** https://jigsaw.w3.org/css-validator/
-
-**File to validate:** `css/styles.css` (validator follows `@import` chain)
-
-**Checklist:**
-
-| File | Errors | Warnings | Verified | Status |
-|------|--------|----------|----------|--------|
-| `css/styles.css` | — | — | [ ] | Pending manual verification |
-
-**Optional evidence (save to `docs/evidence/` when captured):**
-
-| File | Description |
-|------|-------------|
-| `css-validation.png` | W3C CSS Validator result for `css/styles.css` |
-
----
-
-### B.5 WAVE accessibility evaluation
-
-**Tool:** https://wave.webaim.org/ (or WAVE browser extension on local files)
-
-**Pages to evaluate:** Home (`index.html`), Destinations (`destinations.html`), Contact (`contact.html`)
-
-**Procedure:**
-
-1. Enter the live URL or evaluate local files
-2. Review errors, contrast errors, alerts, and structural features
-3. Record summary counts; remediate any unintended issues
-
-**Checklist:**
-
-| Page | Errors | Contrast errors | Alerts | Verified | Status |
-|------|--------|-----------------|--------|----------|--------|
-| `index.html` | — | — | — | [ ] | Pending manual verification |
-| `destinations.html` | — | — | — | [ ] | Pending manual verification |
-| `contact.html` | — | — | — | [ ] | Pending manual verification |
-
-**Optional evidence (save to `docs/evidence/` when captured):**
-
-| File | Description |
-|------|-------------|
-| `wave-home.png` | WAVE report for homepage |
-| `wave-destinations.png` | WAVE report for destinations page |
-| `wave-contact.png` | WAVE report for contact page |
-
----
-
-### B.6 Evidence capture summary
-
-Create `docs/evidence/` when screenshots are ready. None are required for submission if manual checks are recorded elsewhere, but the filenames above provide a consistent naming scheme.
-
-| Evidence set | Files expected | Status |
-|--------------|----------------|--------|
-| Browser testing | 3 screenshots | Pending manual verification |
-| Responsive testing | 3 screenshots | Pending manual verification |
-| W3C HTML validation | 2 screenshots | Pending manual verification |
-| W3C CSS validation | 1 screenshot | Pending manual verification |
-| WAVE evaluation | 3 screenshots | Pending manual verification |
+- WAVE reports two non-error alerts per tested page (possible heading, redundant link).
+- Six HTML pages not yet checked in the W3C Nu Validator; Firefox not manually tested.
 
 ---
 
 ## Conclusion
 
-NorthLight Iceland is a multi-page, responsive, static HTML/CSS travel website. **Development and automated review are complete:** markup passes `html-validate` with zero errors, accessibility features are implemented as documented in Part A, and identified markup issues have been remediated except for the documented CSS-only menu limitation.
+NorthLight Iceland has been evaluated with a mix of **automated tools**, **manual browser checks**, and **filed evidence screenshots**. **No blocking defects** were found in completed checks: `html-validate` reports zero errors, W3C Nu Validator passes `index.html` and `contact.html`, W3C CSS Validator reports zero errors on `styles.css`, and WAVE reports zero errors and zero contrast errors on three representative pages.
 
-**Manual verification** (Part B) covers cross-browser runs, responsive spot-checks, optional W3C validator passes, WAVE evaluation, and evidence capture. These items are clearly scoped checklists — not open defects — and can be completed and recorded when time and tooling allow.
+One **HTML validation error** (`aria-controls` on the navigation `<label>`) was found during Nu Validator testing and **fixed** across all eight HTML files; post-fix evidence confirms a clean result on `index.html`.
 
-For submission sign-off details, see `SUBMISSION-REVIEW.md`.
+Primary **responsive breakpoint evidence** (375px, 768px, 1280px on `index.html`) is complete. Remaining gaps are **documentation completeness** (six pages not Nu-validated, Firefox not tested, inner-page responsive spot-checks) rather than known code failures. See [Part B.4](#b4-checks-not-yet-completed) for the open checklist.
+
+For submission sign-off, see `SUBMISSION-REVIEW.md`.

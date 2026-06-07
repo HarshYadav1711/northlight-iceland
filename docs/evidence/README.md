@@ -1,6 +1,6 @@
 # Test evidence — NorthLight Iceland
 
-This folder holds **screenshots captured during manual testing**. It is intentionally empty until real evidence is recorded. Do not commit placeholder or fabricated images.
+This folder holds **screenshots captured during manual testing**. Do not commit placeholder or fabricated images. Current files are listed in [`docs/evaluation-report.md`](../evaluation-report.md) § Part C.
 
 Evidence supports the manual verification checklists in [`docs/evaluation-report.md`](../evaluation-report.md) (Part B). Screenshots are **optional** for submission if results are documented elsewhere, but filenames below match the evaluation report so assessors can find evidence quickly.
 
@@ -22,9 +22,9 @@ Only genuine captures from browsers, DevTools, or online validators. Use **PNG**
 
 | Filename | What to capture | Referenced in |
 |----------|-----------------|---------------|
-| `responsive-mobile-375.png` | Homepage at **375px** width (single column, hamburger visible) | `evaluation-report.md` § B.2 |
-| `responsive-tablet-768.png` | Destinations page (`destinations.html`) at **768px** width (two-column cards or feature layout) | `evaluation-report.md` § B.2 |
-| `responsive-desktop-1280.png` | Travel Guide page (`travel-guide.html`) at **1280px** width (full horizontal nav, multi-column content) | `evaluation-report.md` § B.2 |
+| `responsive-mobile-375.png` | Homepage (`index.html`) at **375px** width (single column, hamburger visible) | `evaluation-report.md` § A.6 |
+| `responsive-tablet-768.png` | Homepage (`index.html`) at **768px** width (hamburger menu; horizontal nav from 900px) | `evaluation-report.md` § A.6 |
+| `responsive-desktop-1280.png` | Homepage (`index.html`) at **1280px** width (full horizontal nav, hero and content sections) | `evaluation-report.md` § A.6 |
 
 ### W3C HTML validation — supplementary (2 files)
 
@@ -113,8 +113,28 @@ This README is the **canonical filename list** for evaluation evidence. If you a
 
 | Item | Status |
 |------|--------|
-| Expected files (evaluation report) | 12 PNG screenshots |
-| Files currently present | None — capture during manual verification |
-| Placeholder images | Not used — do not add fake or generated screenshots |
+| Screenshot files on file | **14** (see evaluation report Part C) |
+| Capture guide | `README.md` (this file) |
+| Full results and issue log | `docs/evaluation-report.md` § Parts A–C |
+| Placeholder images | Not used |
 
-When all intended captures are complete, optionally add a one-line note to `evaluation-report.md` § B.6 stating the capture date and which files are present.
+### Files currently present
+
+| File | Test type |
+|------|-----------|
+| `html validation.png` | W3C Nu Validator — `index.html` |
+| `html-validation-contact.png` | W3C Nu Validator — `contact.html` |
+| `css validation.png` | W3C CSS Validator — `styles.css` |
+| `wave-home.png` | WAVE — homepage |
+| `wave-destinations.png` | WAVE — destinations |
+| `wave-contact.png` | WAVE — contact |
+| `responsive-mobile-375.png` | Responsive — 375px (`index.html`) |
+| `responsive-tablet-768.png` | Responsive — 768px (`index.html`) |
+| `responsive-desktop-1280.png` | Responsive — 1280px (`index.html`) |
+| `Chrome evidence.png` | Chrome desktop — homepage |
+| `Edge evidence.png` | Edge desktop — homepage |
+| `iPhone SE Evidence.png` | Responsive — supplementary 375px |
+| `Samsung Galaxy S8+ Evidence.png` | Responsive — supplementary 360px |
+| `Galaxy Z Fold 5 Evidence.png` | Responsive — supplementary 344px |
+
+**Optional captures still open:** Firefox browser test, Edge contact-form validation, inner-page responsive shots (`destinations.html`, `travel-guide.html`), Nu Validator screenshots for six remaining HTML pages.
