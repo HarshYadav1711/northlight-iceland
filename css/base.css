@@ -93,6 +93,10 @@ a:hover {
   top: var(--space-sm);
 }
 
+#main-content:focus {
+  outline: none;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

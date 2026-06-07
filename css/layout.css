@@ -201,6 +201,17 @@
   }
 }
 
+/* Skip-link and in-page anchor offset (sticky header) */
+
+#main-content {
+  scroll-margin-top: var(--header-height);
+}
+
+section[id],
+#attributions {
+  scroll-margin-top: calc(var(--header-height) + 0.5rem);
+}
+
 /* Sections */
 
 .section {
@@ -276,8 +287,7 @@
   gap: 0.25rem;
 }
 
-.breadcrumb li:not(:last-child)::after {
-  content: "/";
+.breadcrumb-sep {
   margin-left: 0.25rem;
   opacity: 0.5;
 }
