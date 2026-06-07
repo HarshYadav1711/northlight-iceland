@@ -5,6 +5,8 @@
 
 **Method:** Read all five documents; inspected all eight HTML pages and the CSS layer files (`css/styles.css` and imports); ran `npx html-validate "*.html"` (0 errors); searched markup and stylesheets for breakpoints, accessibility attributes, external-link behaviour, and asset paths.
 
+**Post-audit updates (same day):** Issues 1, 4, 5, and 6 below were remediated after this audit was written. Navigation accessibility attributes are now on all eight HTML pages; `clip: rect()` was removed from `css/base.css`; `images/.gitkeep` exists; `docs/evaluation-report.md` was restructured to v2.0; `docs/references.md` Unsplash URLs, `docs/website-specification.md` breakpoints, and `README.md` were aligned with the codebase. See `docs/submission-readiness-audit.md` for current submission status.
+
 ---
 
 ## Executive summary

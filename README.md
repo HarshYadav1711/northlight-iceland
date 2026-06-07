@@ -16,14 +16,14 @@ The site covers five regions, five common activities, and practical topics (timi
 * Akureyri
 * Westfjords
 
-Each destination page section includes drive times, suggested stay length, and links to related activities.
+Each destination page section includes drive times, suggested stay length, and links to related activities. The homepage highlights four featured regions; the Destinations page covers all five.
 
 ### Experiences
 
 * Northern Lights viewing
 * Glacier hiking
 * Whale watching
-* Geothermal hot springs
+* Hot springs and geothermal pools
 * Ice cave exploration
 
 Seasonal availability is summarised in a comparison table on the Experiences page.
@@ -42,7 +42,7 @@ Ten photographs with captions, grouped on a single grid page.
 
 ### Feedback Form
 
-The contact page collects name, email, destination interest, travel season, and message. Submitting redirects to `thank-you.html` — a demo flow with no server-side processing.
+The contact page collects name, email, destination interest, travel season, message, and a required consent checkbox. Submitting redirects to `thank-you.html` — a demo flow with no server-side processing.
 
 ## Design Principles
 
@@ -116,7 +116,11 @@ northlight-iceland/
 │   ├── production-review.md
 │   ├── image-attributions.md
 │   ├── assets-audit.md
-│   └── references.md
+│   ├── references.md
+│   ├── final-review.md
+│   ├── documentation-consistency-audit.md
+│   ├── submission-readiness-audit.md
+│   └── evidence/           # Test screenshots (see evidence/README.md)
 │
 ├── SUBMISSION-REVIEW.md    # Validation checklist and review notes
 │
@@ -157,7 +161,7 @@ Use any static file server if you prefer — `npx serve`, VS Code Live Server, e
 
 The site is static HTML/CSS deployed to GitHub Pages.
 
-**Automated (this repository):** pushing to `main` triggers `.github/workflows/pages.yml`, which uploads the repository root as a Pages artifact. Enable Pages under repository Settings → Pages → Source: GitHub Actions.
+**Automated (this repository):** pushing to `main` or `master` triggers `.github/workflows/pages.yml`, which uploads the repository root as a Pages artifact. Enable Pages under repository Settings → Pages → Source: GitHub Actions.
 
 **Manual / other hosts:** upload all HTML files and the `css/` directory to any static host (Netlify, Cloudflare Pages, S3, etc.). Keep file paths unchanged. No build command required.
 

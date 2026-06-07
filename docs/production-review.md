@@ -178,7 +178,7 @@ These items do not block deployment but would improve production hardening:
 ### Form handling
 
 - Replace `method="get"` with a server-side handler or form service (Formspree, Netlify Forms, etc.) before collecting real user data — GitHub Pages cannot process POST requests natively.
-- Add `<meta name="robots" content="noindex">` to `thank-you.html` if form confirmation pages should not appear in search results.
+- `thank-you.html` already includes `<meta name="robots" content="noindex">`; add `robots.txt` only if broader crawl control is needed.
 
 ### Accessibility (optional, requires JavaScript)
 

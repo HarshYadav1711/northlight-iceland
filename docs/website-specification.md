@@ -72,9 +72,10 @@ Every content page shares a persistent header with primary navigation, breadcrum
 
 | Viewport | Layout behaviour |
 |----------|------------------|
-| Mobile (&lt; 768px) | Single column, checkbox-toggle navigation, stacked cards |
-| Tablet (768px – 959px) | Two-column grids, horizontal navigation |
-| Desktop (960px+) | Three-column card grids, max-width container (75rem) |
+| Mobile (&lt; 600px) | Single column, checkbox-toggle navigation, stacked cards |
+| Small tablet (600px – 767px) | Two-column card grids, gallery grid, form field pairs; checkbox navigation |
+| Tablet (768px – 899px) | Two-column feature rows, form aside + panel, footer three-column grid; checkbox navigation |
+| Desktop (900px+) | Horizontal navigation, three-column card grids, max-width container (75rem) |
 
 ### Contact form
 

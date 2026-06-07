@@ -103,6 +103,7 @@ Capture the **summary panel** showing error, warning, contrast, and alert counts
 | [`docs/final-review.md`](../final-review.md) | Notes evidence folder status in pre-submission review |
 | [`docs/assets-audit.md`](../assets-audit.md) | Suggests before/after screenshots if images are self-hosted |
 | [`docs/documentation-consistency-audit.md`](../documentation-consistency-audit.md) | Records whether evidence exists vs documentation claims |
+| [`docs/submission-readiness-audit.md`](../submission-readiness-audit.md) | Pre-submission readiness assessment and evidence status |
 
 This README is the **canonical filename list** for evaluation evidence. If you add screenshots, keep names aligned with `evaluation-report.md` or update both documents together.
 

@@ -50,7 +50,7 @@ Review completed: June 2026
 ### Visual / responsive verification
 
 - **Mobile (~375px):** Single-column stacks, hamburger menu, readable form fields, hero and page hero scale correctly.
-- **Tablet (768px):** Form two-column rows activate; destination cards use 2-column grid.
+- **Tablet (768px):** Form aside and panel side-by-side; destination feature rows use 2-column grid. Form field pairs activate at 600px.
 - **Desktop (1280px):** Full navigation bar, form aside + form panel side-by-side, 3-column card grids where defined.
 
 ---

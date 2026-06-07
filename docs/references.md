@@ -44,29 +44,29 @@ All photographs on NorthLight Iceland are sourced from [Unsplash](https://unspla
 
 Unsplash n.d., *Unsplash license*, viewed 7 June 2026, <https://unsplash.com/license>.
 
-Bravo, L n.d., *Ring Road landscape*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1470074568702-e89b72010f00>.
+Bravo, L n.d., *Ring Road landscape*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1470074568702-e89b72010f00>.
 
-Debrunner, P n.d., *Ice cave interior*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1483664852095-d662b550591b>.
+Debrunner, P n.d., *Ice cave interior*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1483664852095-d662b550591b>.
 
-Ellis, K n.d., *Seljalandsfoss waterfall*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1520769945061-fa875b7745b9>.
+Ellis, K n.d., *Seljalandsfoss waterfall*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1520769945061-fa875b7745b9>.
 
-Ellis, K n.d., *Iceland highland landscape*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1504829857797-ddff29c27927>.
+Ellis, K n.d., *Iceland highland landscape*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1504829857797-ddff29c27927>.
 
-Guth, V n.d., *Aurora borealis over lake*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1483347756197-71ef873115ba>.
+Guth, V n.d., *Aurora borealis over lake*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1483347756197-71ef873115ba>.
 
-Jildén, A n.d., *Glacier hiking scene*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1439066615861-d1af74d74005>.
+Jildén, A n.d., *Glacier hiking scene*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1439066615861-d1af74d74005>.
 
-Johansson, J n.d., *Reykjavík harbour*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1529963183539-53a91a228095>.
+Johansson, J n.d., *Reykjavík harbour*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1529963183539-53a91a228095>.
 
-Jodoin, M-O n.d., *Mountain reflection*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1521295121783-8a263d6dba82>.
+Jodoin, M-O n.d., *Mountain reflection*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1521295121783-8a263d6dba82>.
 
-National Oceanic and Atmospheric Administration n.d., *Whale tail*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1559827292-581593893654>.
+National Oceanic and Atmospheric Administration n.d., *Whale tail*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1559827292-581593893654>.
 
-Odiin, E n.d., *Geothermal steam*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1476610182048-b716bfb6815a>.
+Odiin, E n.d., *Geothermal steam*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1476610182048-b716bfb6815a>.
 
-Silversea Cruises n.d., *Geothermal pool*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1478131143088-5e561ea45f65>.
+Silversea Cruises n.d., *Geothermal pool*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1478131143088-5e561ea45f65>.
 
-Spiske, M n.d., *Aurora over snow*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/photo-1531366936337-7c912a4589a7>.
+Spiske, M n.d., *Aurora over snow*, photograph, Unsplash, viewed 7 June 2026, <https://unsplash.com/photos/1531366936337-7c912a4589a7>.
 
 ---
 

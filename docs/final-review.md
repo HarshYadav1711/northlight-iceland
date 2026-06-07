@@ -18,8 +18,8 @@ The repository is suitable for submission and static production deployment. Rema
 | CSS validity | Pass — layered imports resolve; no invalid properties found on review |
 | Accessibility | Pass with documented CSS-only limitations |
 | Responsive behaviour | Pass — breakpoints at 600px, 768px, 900px |
-| Documentation | Pass — six files in `docs/` plus root review documents |
-| README accuracy | Pass — updated to match repository layout |
+| Documentation | Pass — ten files in `docs/` (including `evidence/README.md`) plus root review documents |
+| README accuracy | Pass — project structure and form fields match repository layout |
 | Navigation consistency | Pass — identical primary nav on all public pages |
 | Image attributions | Pass — 12 photographers credited for 12 unique photos |
 
@@ -67,6 +67,10 @@ The repository is suitable for submission and static production deployment. Rema
 - `docs/image-attributions.md` — per-page image inventory.
 - `docs/assets-audit.md` — CDN dependency analysis and migration plan.
 - `docs/references.md` — AU Harvard references for sources and images.
+- `docs/final-review.md` — repository-wide review (this document).
+- `docs/documentation-consistency-audit.md` — documentation vs code audit.
+- `docs/submission-readiness-audit.md` — pre-submission readiness assessment.
+- `docs/evidence/README.md` — manual test screenshot guide.
 - `SUBMISSION-REVIEW.md` — validation checklist at repository root.
 
 ### Deployment
@@ -105,12 +109,12 @@ The repository is suitable for submission and static production deployment. Rema
 
 ### Testing evidence
 
-- `docs/evaluation-report.md` lists browser/responsive test placeholders; `docs/evidence/` directory does not exist — screenshots not yet captured.
+- `docs/evaluation-report.md` Part B lists manual verification checklists; `docs/evidence/` exists with a capture guide but screenshots are not yet filed.
 - Cross-browser testing documented as Chromium-only; Firefox and Edge not recorded.
 
 ### Documentation overlap
 
-- `COM4014/docs/` duplicates some root `docs/` content from an earlier course folder structure. Not linked from the live site but may confuse maintainers.
+- Removed duplicate `COM4014/docs/` copies (superseded by root `docs/`).
 
 ---
 
@@ -148,7 +152,7 @@ Prioritised by impact; none are required for current static deployment.
 ### Lower priority (maintainability and assessment)
 
 8. **Capture test evidence** — browser and responsive screenshots into `docs/evidence/`.
-9. **Consolidate `COM4014/docs/`** — archive or remove duplicate course folder if no longer needed.
+9. ~~**Consolidate `COM4014/docs/`**~~ — duplicate course folder removed.
 10. **Cross-browser sign-off** — manual pass in Firefox and Edge; update `docs/evaluation-report.md`.
 
 ---
@@ -209,7 +213,7 @@ Tables use `.table-wrap { overflow-x: auto }` on all three data tables.
 
 ### README accuracy
 
-README matches repository as of this review: page list, CSS layers, empty `images/` with `.gitkeep`, full `docs/` inventory, GitHub Actions deployment, Unsplash CDN note, form demo behaviour, and accessibility limitations cross-referenced to `docs/production-review.md`.
+README matches repository as of this review: page list, CSS layers, `images/` placeholder with `.gitkeep`, full `docs/` inventory (including audit and evidence guides), GitHub Actions deployment on `main` or `master`, Unsplash CDN note, form fields including consent checkbox, form demo behaviour, and accessibility limitations cross-referenced to `docs/production-review.md`.
 
 ---
 
@@ -231,10 +235,12 @@ No design, content, or architectural changes were made.
 | `README.md` | Setup, deployment, and project overview |
 | `SUBMISSION-REVIEW.md` | Prior validation checklist |
 | `docs/production-review.md` | Detailed production audit |
-| `docs/evaluation-report.md` | Accessibility and browser testing scope |
+| `docs/evaluation-report.md` | Completed findings and manual verification checklists |
 | `docs/image-attributions.md` | Full photograph inventory |
 | `docs/website-specification.md` | Functional specification |
 | `docs/references.md` | AU Harvard bibliography |
+| `docs/evidence/README.md` | Test screenshot capture guide |
+| `docs/submission-readiness-audit.md` | Pre-submission readiness assessment |
 
 ---
 

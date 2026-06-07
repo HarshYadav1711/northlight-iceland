@@ -6,6 +6,8 @@
 
 **Method:** Inspected all eight HTML files and four CSS layers; ran `npx html-validate "*.html"` (0 errors); reviewed root and `docs/` documentation; checked `.github/workflows/pages.yml`; cross-checked against `SUBMISSION-REVIEW.md` and `docs/evaluation-report.md` (v2.0).
 
+**Repository polish (same day):** Documentation alignment items below (breakpoints, references URLs, README structure, form field list, homepage copy, stale audit notes, `COM4014/` removal) were applied after this audit was written.
+
 **Verdict:** The website and core documentation are **submission-ready** as a static HTML/CSS academic project. No blocking code defects were found. Remaining gaps are documentation accuracy, optional manual test evidence, and operational dependencies (CDN, demo form) that are already disclosed.
 
 ---
@@ -69,24 +71,21 @@ Only **actual** inconsistencies and gaps identified in this audit. None block st
 
 ### Code and content
 
-| Issue | Location | Detail |
-|-------|----------|--------|
-| Homepage destination count mismatch | `index.html` vs `destinations.html` / README | Homepage lead copy says “**Four routes**” and shows four destination cards (Akureyri omitted). Destinations page and README state **five** regions. |
-| `template.html` publicly reachable | Deployed site | Not linked from navigation but available at `/template.html` with placeholder meta description. |
+| Issue | Location | Detail | Status |
+|-------|----------|--------|--------|
+| Homepage destination count mismatch | `index.html` vs `destinations.html` / README | Homepage shows four featured cards (Akureyri omitted); five regions on Destinations page. | **Resolved** — lead copy and README clarify four featured regions vs five on Destinations page. |
+| `template.html` publicly reachable | Deployed site | Not linked from navigation but available at `/template.html` with placeholder meta description. | Open — acceptable for development shell. |
 
 ### Documentation accuracy
 
-| Issue | Location | Detail |
-|-------|----------|--------|
-| Breakpoint values conflict | `docs/website-specification.md` vs CSS / README | Spec cites mobile &lt;768px, tablet 768–959px with horizontal nav, desktop 960px+. Implementation uses **600px**, **768px**, **900px**; horizontal nav starts at **900px**. README correctly cites 600px and 900px. |
-| Form layout breakpoint wording | `SUBMISSION-REVIEW.md` vs `css/components.css` | Submission review states form two-column rows activate at tablet **768px**; `.form-row--2` activates at **600px** (aside + panel layout is at 768px). |
-| README omits consent field | `README.md` § Feedback Form | Lists five fields; `contact.html` also requires a **consent checkbox** documented in `docs/website-specification.md`. |
-| README project tree incomplete | `README.md` § Project Structure | Omits `docs/evidence/`, `docs/documentation-consistency-audit.md`, `docs/final-review.md`, and other files present in `docs/`. |
-| Incorrect Unsplash URLs | `docs/references.md` | Twelve image bibliography entries use `/photos/photo-{id}` paths; working Unsplash page URLs and `docs/image-attributions.md` use `/photos/{id}` without the duplicated `photo-` prefix. |
-| Stale consistency audit | `docs/documentation-consistency-audit.md` | Dated 7 June 2026; Issue 1 states navigation accessibility fixes are **not implemented**. They are now present on all eight HTML pages. |
-| Stale final review note | `docs/final-review.md` § Testing evidence | States `docs/evidence/` “does not exist”; folder now exists with `README.md` but **no screenshots** yet. |
-| Stale production-review note | `docs/production-review.md` § Remaining recommendations | Suggests adding `noindex` to `thank-you.html`; that meta tag is already in place. |
-| Duplicate course folder | `COM4014/docs/` | Contains older copies of `evaluation-report.md`, `website-specification.md`, and `references.md`. Not linked from the site but deployed alongside the live project. |
+| Issue | Location | Detail | Status |
+|-------|----------|--------|--------|
+| Breakpoint values conflict | `docs/website-specification.md` vs CSS | Spec previously cited 768px / 960px breakpoints. | **Resolved** — spec aligned to 600px / 768px / 900px. |
+| Form layout breakpoint wording | `SUBMISSION-REVIEW.md` vs CSS | Form field pairs vs aside layout breakpoints conflated. | **Resolved** — submission review distinguishes 600px field pairs and 768px aside layout. |
+| README form and structure gaps | `README.md` | Consent field and docs inventory omitted. | **Resolved** — README updated. |
+| Incorrect Unsplash URLs | `docs/references.md` | Bibliography URLs used duplicated `photo-` prefix. | **Resolved** — URLs match `docs/image-attributions.md`. |
+| Stale audit documents | `documentation-consistency-audit.md`, `final-review.md`, `production-review.md` | Outdated nav, evidence, and noindex notes. | **Resolved** — post-audit notes and corrections applied. |
+| Duplicate course folder | `COM4014/docs/` | Superseded copies of root `docs/` files. | **Resolved** — duplicate files removed. |
 
 ### Verification status (not defects)
 
@@ -107,16 +106,7 @@ Actions are limited to **documentation alignment**, **evidence capture**, and **
 
 1. **Complete manual verification** — Work through `docs/evaluation-report.md` Part B; record browser versions and tick checklists when done.
 2. **Capture evidence screenshots** — Follow `docs/evidence/README.md`; save PNGs with the documented filenames (optional if results are recorded elsewhere).
-3. **Fix `docs/references.md` image URLs** — Remove the erroneous `photo-` prefix from Unsplash bibliography links so they match `docs/image-attributions.md`.
-4. **Align breakpoint documentation** — Update `docs/website-specification.md` (and the tablet form note in `SUBMISSION-REVIEW.md`) to match CSS breakpoints, or add an explicit note that the spec describes design intent and CSS uses 600/768/900px.
-5. **Update `README.md`** — Add the consent checkbox to the form field list; extend the project structure to include `docs/evidence/` and other existing `docs/` files.
-6. **Resolve homepage copy** — Either change “Four routes” to five and add Akureyri to the featured grid, or clarify in README that the homepage highlights four featured regions while the Destinations page covers all five.
-
-### Submission hygiene (optional but reduces assessor confusion)
-
-7. **Address `COM4014/` duplication** — Remove the folder, move it outside the repo, or exclude it from the Pages artifact if assessors should not see duplicate docs at `/COM4014/docs/`.
-8. **Refresh stale audit documents** — Add a short “superseded” note to `docs/documentation-consistency-audit.md` or update Issue 1 to reflect current nav markup; correct the evidence-folder line in `docs/final-review.md`.
-9. **Confirm GitHub Pages settings** — Repository Settings → Pages → Source: GitHub Actions; verify the live URL matches README and documentation.
+3. **Confirm GitHub Pages settings** — Repository Settings → Pages → Source: GitHub Actions; verify the live URL matches README and documentation.
 
 ### Already acceptable without action
 
@@ -136,7 +126,7 @@ Actions are limited to **documentation alignment**, **evidence capture**, and **
 | Deployment workflow | **Yes** | Functional; publishes full repository root |
 | Core documentation | **Yes** | `SUBMISSION-REVIEW.md` + `evaluation-report.md` v2.0 are coherent |
 | Supplementary evidence | **Partial** | Checklists defined; screenshots and multi-browser runs pending |
-| Documentation consistency | **Partial** | Breakpoints, references URLs, and two stale audit files need alignment |
+| Documentation consistency | **Yes** | Breakpoints, references, README, and audit cross-references aligned in repository polish pass |
 
 **Overall:** Safe to submit as a complete static website project. Prioritise documentation fixes and optional evidence capture if the assessment rubric requires recorded browser or WAVE testing.
 
