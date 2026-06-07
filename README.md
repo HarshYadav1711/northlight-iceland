@@ -1,27 +1,14 @@
 # NorthLight Iceland
 
-NorthLight Iceland is a destination-focused travel website designed to help visitors explore Iceland's most remarkable landscapes, experiences, and travel opportunities through a simple, intuitive, and accessible web experience.
-
-The platform brings together practical travel information, destination highlights, activity recommendations, planning resources, and visitor feedback in a clean and responsive interface. The goal is to make trip planning straightforward while showcasing the unique character of Iceland's natural environment.
+A static travel guide to Iceland — destination write-ups, activity notes, planning basics, a photo gallery, and a contact form. HTML and CSS only; no build step or JavaScript.
 
 ## Overview
 
-Travel websites often overwhelm visitors with excessive information, cluttered navigation, and inconsistent user experiences. NorthLight Iceland was created with a different approach: present useful information clearly, prioritize usability, and make discovering destinations enjoyable.
-
-The website provides:
-
-* Destination guides covering major regions of Iceland
-* Information about popular activities and experiences
-* Practical travel planning resources
-* Image galleries showcasing key attractions
-* A visitor feedback and enquiry form
-* Responsive layouts for desktop, tablet, and mobile devices
+The site covers five regions, five common activities, and practical topics (timing, transport, budget, safety, packing). Content pages share the same header, footer, and stylesheet. Photographs load from the Unsplash CDN at runtime.
 
 ## Features
 
 ### Destination Discovery
-
-Explore some of Iceland's most popular locations, including:
 
 * Reykjavík
 * The Golden Circle
@@ -29,11 +16,9 @@ Explore some of Iceland's most popular locations, including:
 * Akureyri
 * Westfjords
 
-Each destination includes concise information, key highlights, and travel inspiration.
+Each destination page section includes drive times, suggested stay length, and links to related activities.
 
 ### Experiences
-
-Discover activities that make Iceland one of the world's most unique travel destinations:
 
 * Northern Lights viewing
 * Glacier hiking
@@ -41,9 +26,9 @@ Discover activities that make Iceland one of the world's most unique travel dest
 * Geothermal hot springs
 * Ice cave exploration
 
-### Travel Planning Resources
+Seasonal availability is summarised in a comparison table on the Experiences page.
 
-Visitors can access practical information to help prepare for their journey, including:
+### Travel Planning Resources
 
 * Best times to visit
 * Transportation guidance
@@ -53,42 +38,40 @@ Visitors can access practical information to help prepare for their journey, inc
 
 ### Gallery
 
-A curated visual collection designed to showcase Iceland's landscapes, culture, and natural attractions.
+Ten photographs with captions, grouped on a single grid page.
 
 ### Feedback Form
 
-A dedicated contact page allows visitors to submit feedback and travel enquiries through a structured form with fields for name, email, destination interest, preferred travel season, and message. Submissions redirect to a confirmation page (demonstration flow; no server processing).
+The contact page collects name, email, destination interest, travel season, and message. Submitting redirects to `thank-you.html` — a demo flow with no server-side processing.
 
 ## Design Principles
 
-NorthLight Iceland was developed around four core principles:
-
 ### Clarity
 
-Content is organised into logical sections with straightforward navigation and consistent layouts.
+Logical page sections, breadcrumbs on inner pages, and in-page jump links on longer guides (Destinations, Experiences, Travel Guide).
 
 ### Accessibility
 
-The website follows accessibility best practices by using:
+Built to WCAG 2.1 AA where achievable without JavaScript:
 
-* Semantic HTML structure
-* Meaningful heading hierarchy
-* Alternative text for images
-* Accessible form labels
-* Keyboard-friendly navigation
-* Sufficient colour contrast
+* Skip link to main content
+* Semantic landmarks (`header`, `nav`, `main`, `footer`, `aside`)
+* One `<h1>` per page; tables use `<caption>` and `scope`
+* Descriptive `alt` text on all images; visible `:focus-visible` rings
+* Form fields paired with labels and hint text (`aria-describedby`)
+* `aria-current="page"` on active navigation links
+* CSS-only mobile menu (checkbox toggle) — see limitations below
+* `prefers-reduced-motion` honoured for nav animation and form transitions
+
+**Known limitation:** the mobile menu toggle does not update `aria-expanded` without JavaScript. Details in `docs/production-review.md`.
 
 ### Responsiveness
 
-Layouts adapt across different screen sizes to provide a consistent experience on:
-
-* Desktop computers
-* Tablets
-* Mobile devices
+Single-column layout on small screens; two- and three-column grids from 600px and 900px breakpoints. Tables scroll horizontally inside `.table-wrap` on narrow viewports.
 
 ### Performance
 
-The site uses no JavaScript and no CSS frameworks—only HTML, modular CSS, and Google Fonts (Montserrat and Poppins) for typography.
+No JavaScript and no CSS frameworks. Typography from Google Fonts (Montserrat, Poppins) via `css/tokens.css`. Styles split into layered CSS files imported through `css/styles.css`.
 
 ## Technology Stack
 
@@ -104,85 +87,98 @@ The site uses no JavaScript and no CSS frameworks—only HTML, modular CSS, and 
 * CSS custom properties (design tokens)
 * Responsive media queries
 
-Styles are split into layered files (`tokens`, `base`, `layout`, `components`) imported through a single entry point (`css/styles.css`).
-
-No frontend frameworks or UI libraries were used. The interface was built from the ground up to maintain full control over structure, styling, and performance.
-
 ## Project Structure
 
 ```text
 northlight-iceland/
 │
 ├── index.html              # Homepage
-├── destinations.html
-├── experiences.html
-├── travel-guide.html
-├── gallery.html
-├── contact.html
-├── thank-you.html          # Form confirmation
-├── template.html           # Reusable page shell
+├── destinations.html       # Five destination guides
+├── experiences.html        # Five activity guides + season table
+├── travel-guide.html       # Timing, transport, budget, safety, packing
+├── gallery.html            # Photo grid
+├── contact.html            # Feedback form + image attributions
+├── thank-you.html          # Form confirmation (demo redirect target)
+├── template.html           # Page shell for copying new pages
 │
 ├── css/
-│   ├── styles.css          # Main stylesheet (imports layers below)
-│   ├── tokens.css
-│   ├── base.css
-│   ├── layout.css
-│   └── components.css
+│   ├── styles.css          # Entry point — imports the layers below
+│   ├── tokens.css          # Colours, spacing, fonts
+│   ├── base.css            # Reset, typography, utilities
+│   ├── layout.css          # Header, nav, footer, grids
+│   └── components.css      # Cards, forms, gallery, tables
 │
-├── images/                 # Local assets (optional; gallery uses Unsplash CDN)
+├── images/                 # Empty — photos served from Unsplash CDN
 │
-├── .github/workflows/      # GitHub Pages deployment
-├── SUBMISSION-REVIEW.md    # Validation and accessibility review notes
+├── docs/                   # Maintainer documentation
+│   ├── production-review.md
+│   ├── image-attributions.md
+│   ├── assets-audit.md
+│   └── …
+│
+├── .github/workflows/
+│   └── pages.yml           # GitHub Pages deployment
+│
 └── README.md
 ```
 
-Course specification and evaluation documents are in `COM4014/docs/`.
-
 ## Live Site
-
-Deployed via GitHub Pages on push to `main`:
 
 **https://harshyadav1711.github.io/northlight-iceland/**
 
-## Local Preview
+## Local Setup
 
-Open `index.html` in a browser, or run a local server from the repository root:
+**Requirements:** a web browser. No Node, npm, or build tools.
+
+1. Clone or download the repository.
+2. Preview using either method below.
+
+**Option A — open directly**
+
+Open `index.html` in a browser. Relative links and CSS work. Images still require network access (Unsplash CDN).
+
+**Option B — local HTTP server (recommended)**
+
+From the repository root:
 
 ```powershell
 python -m http.server 8080
 ```
 
-Then visit http://localhost:8080
+Then open http://localhost:8080
+
+Use any static file server if you prefer — `npx serve`, VS Code Live Server, etc. Serve from the repo root so paths like `css/styles.css` resolve correctly.
+
+## Deployment
+
+The site is static HTML/CSS deployed to GitHub Pages.
+
+**Automated (this repository):** pushing to `main` triggers `.github/workflows/pages.yml`, which uploads the repository root as a Pages artifact. Enable Pages under repository Settings → Pages → Source: GitHub Actions.
+
+**Manual / other hosts:** upload all HTML files and the `css/` directory to any static host (Netlify, Cloudflare Pages, S3, etc.). Keep file paths unchanged. No build command required.
+
+The contact form will not send email on static hosting — `method="get"` redirects to `thank-you.html` for demonstration only.
 
 ## User Experience Goals
 
-The website was designed to help visitors:
-
-* Quickly understand what Iceland offers
-* Navigate between sections without confusion
-* Access information efficiently on any device
-* Submit travel enquiries easily
-* Enjoy a visually engaging browsing experience
+* Find a region or activity without hunting through unrelated pages
+* Read planning basics (season, roads, costs) in one place
+* Submit feedback through a labelled, keyboard-reachable form
+* Use the site on a phone without horizontal scrolling on main content
 
 ## Future Enhancements
 
-Potential future improvements include:
-
-* Interactive destination maps
-* Weather integration
-* Itinerary planning tools
-* Multi-language support
-* Search functionality
-* Booking integrations
+* Self-hosted images (remove Unsplash CDN dependency)
+* Server-side or third-party form handling
+* Favicon and custom 404 page
+* Optional JavaScript for menu `aria-expanded` and form POST
 
 ## Credits
 
-Photographs are sourced from [Unsplash](https://unsplash.com/) under the [Unsplash License](https://unsplash.com/license). Full photographer attributions are listed on the [Contact page](https://harshyadav1711.github.io/northlight-iceland/contact.html#attributions).
+Photographs from [Unsplash](https://unsplash.com/) under the [Unsplash License](https://unsplash.com/license). Full credits on the [Contact page](https://harshyadav1711.github.io/northlight-iceland/contact.html#attributions) and in `docs/image-attributions.md`.
 
-Travel information on this site is for informational and educational purposes. NorthLight Iceland does not sell tours or travel packages.
+Travel information is for general planning only. NorthLight Iceland does not sell tours or packages.
 
 ## Author
 
-Developed and maintained by Harsh Yadav.
-
-For collaboration opportunities, feedback, or project discussions, feel free to get in touch.
+Harsh Yadav
